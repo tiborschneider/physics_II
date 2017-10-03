@@ -226,6 +226,7 @@ every axis x label/.style={at={(ticklabel* cs:1.05)},anchor=west}]
 %system description
 \usetikzlibrary{shapes,arrows}
 \usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
 \tikzstyle{block} = [draw, rectangle, minimum height=2.5em, minimum width=5em]
 \tikzstyle{input} = [coordinate]
 \tikzstyle{output} = [coordinate]
@@ -233,7 +234,7 @@ every axis x label/.style={at={(ticklabel* cs:1.05)},anchor=west}]
 \tikzstyle{sum} = [draw, circle, node distance=1em, minimum height=1.5em]
 \tikzset{
 	>=latex,
-	photon/.style={decorate,decoration={snake,post length=1mm}}
+	photon/.style={decorate,decoration={snake,post length=1mm, segment length = 2mm, amplitude=0.6mm}}
 }
 \tikzset{->-/.style={decoration={
 			markings,

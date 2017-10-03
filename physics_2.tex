@@ -227,6 +227,94 @@ bIf we enclose the system in an optical cavity, we can achieve self-sustained os
 
 \end{donotbrake}
 
+\section{Wave mechanics}
+
+\begin{center}
+	\begin{tabular}{ccccc}
+		& frequency & wavelength & momentum & energy \\
+		\midrule
+		Particle & & $\lambda_b = \frac{h}{p}$ & $p = m v$ & $E = \frac{1}{2} m v^2$ \\
+		Wave & $\omega$ & $\lambda = \frac{2\pi c}{\omega}$ & $p = \frac{\hslash \omega}{c}$ & $E = \hslash \omega$ \\
+	\end{tabular}
+\end{center}
+
+\begin{donotbrake}
+\subsection{Compton Scattering}
+
+\begin{tabular}{cc}
+	\begin{tabular}{c}
+		\begin{tikzpicture}
+			\draw [->, photon] (0,0) -- (1.3,0) node[pos=0.5, below] {$p_1$};
+			\draw [fill=black] (2,-0.1) circle (0.08) node[below] {$e^-$};
+			\draw [->, photon] (4,0) -- (5.5,1) node[pos=0.5, above left]{$p_2$};
+			\draw [fill=black] (4,0) circle (0.08) node[below] {$e^-$};
+			\draw [->] (4,0) -- (5.5,-1.3) node[pos=0.7, below] {$v$};
+			\draw [dashed] (4,0) -- (5.5,0);
+			\draw (4.8,0) arc (0:33:0.8) node[pos=0.6, right] {$\theta$};
+			\draw (4.9,0) arc (0:-41:0.9) node[pos=0.6, right] {$\phi$};
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{mtabular}{c}
+		$\fmm p_1 =\frac{h \nu_1}{c} \qquad p' = \frac{h \nu_2}{c}$ \\
+		$\fmm \nu_2 = \nu_1 - \frac{P_e^2}{2 m_e h}$ \\
+		$\fmm \lambda_2 - \lambda_1 = \frac{h}{m_e c} (1 - \cos \theta)$;
+	\end{mtabular}
+\end{tabular}
+\end{donotbrake}
+
+
+\begin{donotbrake}
+	\subsection{Bragg diffraction}
+	
+	\begin{tabular}{cc}
+		\begin{tabular}{c}
+			\begin{tikzpicture}
+			\draw [thick] (0,0.05) -- (0,0.35);
+			\foreach \y in {0.4,0.8,1.2,1.6,2.0} {
+				\draw [thick] (-0.05,\y - 0.05) -- (0.05,\y - 0.05);
+				\draw [thick] (-0.05,\y + 0.05) -- (0.05,\y + 0.05);
+				\draw [thick] (0,\y + 0.05) -- (0,\y + 0.35);
+			}
+			\draw (0.2,0.6) node {\small $a$};
+			\draw [dashed] (0,1.6) -- (2,1.6);
+			\draw (0,1.6) -- (2,1);
+			\draw (1.5,1.6) arc (0:-17:1.5);
+			\draw (1.2,1.4) node {\small $\theta$}; 
+			\end{tikzpicture}
+		\end{tabular} &
+		\begin{mtabular}{c}
+			$\fmm \sin \theta = \frac{n \lambda}{a}$
+		\end{mtabular}
+	\end{tabular}
+\end{donotbrake}
+
+\begin{donotbrake}
+\subsection{Single slit}
+
+\begin{tabular}{cc}
+	\begin{tabular}{c}
+		\begin{tikzpicture}
+			\draw [->, photon] (-1.5,1) -- (-0.7,1);
+			\draw [thick] (0,-1) -- (0,0.7) -- (0.1,0.7) -- (0.1,-1);
+			\draw [draw=none, fill=black!10] (0,-1) rectangle (0.1,0.7); 
+			\draw [thick] (0,3) -- (0,1.3) -- (0.1,1.3) -- (0.1,3);
+			\draw [draw=none, fill=black!10] (0,3) rectangle (0.1,1.3);
+			\draw [|-|] (-0.2,0.7) -- (-0.2,1.3) node[pos=0.5, left] {$a$};
+			\draw (2,-1) -- (2,3);
+			\draw [thick, domain=-2.01:2, samples=150, variable=\y] plot ({30*sin(\y*200)*sin(\y*200)/((\y*20)*(\y*20)) + 2},{\y + 1}); 
+			\draw (2.5,1.8) node {$I(\theta)$};
+			\draw [dashed] (0,1) -- (2,1);
+			\draw (0,1) -- (1.95,1.75);
+			\draw (1.5,1) arc (0:21:1.5) node[pos=0.5, left] {$\theta$};
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{mtabular}{c}
+		$\fmm I(\theta) = I_0 \frac{\sin^2 \theta}{\theta^2}$ \\
+		$\fmm \sin \theta = \frac{\lambda}{a}$
+	\end{mtabular}
+\end{tabular}
+\end{donotbrake}
+
 \end{twocolumn}
 
 \end{document}
