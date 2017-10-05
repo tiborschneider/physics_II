@@ -23,6 +23,7 @@
 		$e \si{\coulomb}$ & electorn charge \\
 		$m_e \si{\kilogram}$ & electron mass \\
 		$k_B \si{\metre \squared \kilogram \per \second \squared \per \kelvin}$ & bolzmann constant \\
+		$\epsilon_0 \si{\farad \per \metre}$ & vacuum permittivity \\
 		$\lambda \si{\metre}$ & Wavelength \\
 		$\nu \si{\per \second}$ & Frequency \\
 		$\omega \si{\radian \per \second}$ & Radial frequency \\
@@ -37,6 +38,7 @@
 		$e = 1.602 \cdot 10^{-19} \si{\coulomb}$ \\
 		$m_e = 9.109 \cdot 10^{-31} \si{\kilogram}$ \\
 		$k_B = 1.381 \cdot 10^{-23} \si{\metre \squared \kilogram \per \second \squared \per \kelvin}$ \\
+		$\epsilon_0 = 8.854 \cdot 10^{-12} \si{\farad \per \meter}$ \\
 		$1 \si{\electronvolt} = 1.602 \cdot 10^{-19} \si{\joule}$ \\
 		$\fmm \lambda = \frac{c}{\nu} \qquad \fmm \nu = \frac{c}{\lambda} \qquad \omega = 2 \pi \nu$ \\
 		$E = h \cdot \nu$ \\
@@ -273,7 +275,7 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 	
 	\begin{tabular}{cc}
 		\begin{tabular}{c}
-			\begin{tikzpicture}
+			\begin{tikzpicture} [scale=0.8, transform shape]
 			\draw [thick] (0,0.05) -- (0,0.35);
 			\foreach \y in {0.4,0.8,1.2,1.6,2.0} {
 				\draw [thick] (-0.05,\y - 0.05) -- (0.05,\y - 0.05);
@@ -298,15 +300,15 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 
 \begin{tabular}{cc}
 	\begin{tabular}{c}
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.7, transform shape]
 			\draw [->, photon] (-1.5,1) -- (-0.7,1);
-			\draw [thick] (0,-1) -- (0,0.7) -- (0.1,0.7) -- (0.1,-1);
-			\draw [draw=none, fill=black!10] (0,-1) rectangle (0.1,0.7); 
-			\draw [thick] (0,3) -- (0,1.3) -- (0.1,1.3) -- (0.1,3);
-			\draw [draw=none, fill=black!10] (0,3) rectangle (0.1,1.3);
+			\draw [thick] (0,-0.5) -- (0,0.7) -- (0.1,0.7) -- (0.1,-0.5);
+			\draw [draw=none, fill=black!10] (0,-0.5) rectangle (0.1,0.7); 
+			\draw [thick] (0,2.5) -- (0,1.3) -- (0.1,1.3) -- (0.1,2.5);
+			\draw [draw=none, fill=black!10] (0,2.5) rectangle (0.1,1.3);
 			\draw [|-|] (-0.2,0.7) -- (-0.2,1.3) node[pos=0.5, left] {$a$};
-			\draw (2,-1) -- (2,3);
-			\draw [thick, domain=-2.01:2, samples=150, variable=\y] plot ({30*sin(\y*200)*sin(\y*200)/((\y*20)*(\y*20)) + 2},{\y + 1}); 
+			\draw (2,-0.5) -- (2,2.5);
+			\draw [thick, domain=-1.51:1.5, samples=150, variable=\y] plot ({30*sin(\y*200)*sin(\y*200)/((\y*20)*(\y*20)) + 2},{\y + 1}); 
 			\draw (2.5,1.8) node {$I(\theta)$};
 			\draw [dashed] (0,1) -- (2,1);
 			\draw (0,1) -- (1.95,1.75);
@@ -319,6 +321,48 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 	\end{mtabular}
 \end{tabular}
 \end{donotbrake}
+
+\subsection{Bohr-Sommerfeld equalization}
+
+Every single particle must satisfy the following equation. The quantized energy levels below relate to the hydrogen atom
+
+\begin{tabular}{cc}
+	\begin{dtabular}
+		$p$ & Momentum of particle \\
+		$E_n$ & Energy of the nth state \\
+		$E_{ry}$ & Constant (energy) \\
+		$a_0$ & Constant (Bohr-radius) \\	
+	\end{dtabular} &
+	\begin{mtabular}{c}
+		$\fmm \int_{length} p \cdot ds = n \cdot h \qquad n \in \mathbb{N}$ \\
+		$\fmm E_n = \frac{-1}{n^2} \frac{m_e e^2}{8 \epsilon_0^2 h^2} = \frac{-1}{n^2} E_{ry} =\frac{-1}{n^2} $ \\
+		$\fmm r_n = n^2 \cdot \frac{2 \epsilon_0 h}{m_e e^2} = n^2 \cdot a_0$ \\
+		$E_{ry} = 13.6 \si{\electronvolt}$ \\
+		$a_0 = 5.292 \cdot 10^{-11} \si{\meter}$
+	\end{mtabular}
+\end{tabular}
+
+\section{Quantum Mechanics}
+
+\begin{donotbrake}
+\subsection{Wave function}
+$$\psi(\vec{r}, t): \mathbb{R}^4 \rightarrow \mathbb{C} \qquad \iiint \abs{\psi(\vec{r},t)}^2 d^3r = 1 $$
+$$\psi(\vec{r}, t) = a \psi_1(\vec{r},t) + b \psi_2(\vec{r}, t), \qquad \abs{a}^2 + \abs{b}^2 = 1$$
+\end{donotbrake}
+
+\begin{donotbrake}
+\subsection{The Schrödinger equation}
+
+\begin{ddtabular}
+	$V(x,t)$ & potential &
+	$m$ & mass \\
+	$\psi(x,t)$ & 1-dimensional wave function
+\end{ddtabular}
+
+$$i \hslash \cdot \frac{\partial \psi(x,t)}{\partial t} = - \frac{\hslash^2}{2m} \cdot \frac{\partial^2 \psi(x,t)}{\partial x^2} + V(x,t) \psi(x,t)$$
+
+\end{donotbrake}
+
 
 \end{twocolumn}
 
