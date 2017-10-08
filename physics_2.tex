@@ -14,7 +14,6 @@
 \section{The Photon}  
 
 \begin{donotbrake}
-\subsection{constants}
 \begin{tabular}{cc}
 	\begin{dtabular}
 		
@@ -24,10 +23,6 @@
 		$m_e \si{\kilogram}$ & electron mass \\
 		$k_B \si{\metre \squared \kilogram \per \second \squared \per \kelvin}$ & bolzmann constant \\
 		$\epsilon_0 \si{\farad \per \metre}$ & vacuum permittivity \\
-		$\lambda \si{\metre}$ & Wavelength \\
-		$\nu \si{\per \second}$ & Frequency \\
-		$\omega \si{\radian \per \second}$ & Radial frequency \\
-		$E \si{\joule}$ & Energy \\
 		
 	\end{dtabular}
 
@@ -40,11 +35,28 @@
 		$k_B = 1.381 \cdot 10^{-23} \si{\metre \squared \kilogram \per \second \squared \per \kelvin}$ \\
 		$\epsilon_0 = 8.854 \cdot 10^{-12} \si{\farad \per \meter}$ \\
 		$1 \si{\electronvolt} = 1.602 \cdot 10^{-19} \si{\joule}$ \\
-		$\fmm \lambda = \frac{c}{\nu} \qquad \fmm \nu = \frac{c}{\lambda} \qquad \omega = 2 \pi \nu$ \\
-		$E = h \cdot \nu$ \\
 	\end{mtabular}
 \end{tabular}
 \end{donotbrake}
+
+\begin{donotbrake}
+\subsection{Photon \& Electron}
+
+\begin{tabular}{cc}
+	\begin{dtabular}
+		$\lambda \si{\meter}, \, \nu\si{\per\second}$ & Wavelength, Freq. \\
+		$E \si{\joule}$ & Energy \\
+		$\vec{F_c} \si{\newton}$ & Coulomb Force \\
+	\end{dtabular} &
+	\begin{mtabular}{c}
+		$\fmm \lambda = \frac{c}{\nu} \quad \fmm \nu = \frac{c}{\lambda} \quad \omega = 2 \pi \nu$ \\
+		$E = h \cdot \nu$ \\
+		$\fmm \abs{\vec{F_c}} = \frac{Q_1 \cdot Q_2}{4 \pi \epsilon_0 r^2}$ \\
+	\end{mtabular}
+\end{tabular}
+
+\end{donotbrake}
+
 
 \begin{donotbrake}
 \subsection{Photoelectric effect}
@@ -330,8 +342,8 @@ Every single particle must satisfy the following equation. The quantized energy 
 	\begin{dtabular}
 		$p$ & Momentum of particle \\
 		$E_n$ & Energy of the nth state \\
-		$E_{ry}$ & Constant (energy) \\
-		$a_0$ & Constant (Bohr-radius) \\	
+		$E_{ry}$ & Rydberg Energy \\
+		$a_0$ & Bohr-radius \\	
 	\end{dtabular} &
 	\begin{mtabular}{c}
 		$\fmm \int_{length} p \cdot ds = n \cdot h \qquad n \in \mathbb{N}$ \\
