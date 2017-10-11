@@ -369,13 +369,36 @@ $$\psi(\vec{r}, t) = a \psi_1(\vec{r},t) + b \psi_2(\vec{r}, t), \qquad \abs{a}^
 \begin{ddtabular}
 	$V(x,t)$ & potential &
 	$m$ & mass \\
-	$\psi(x,t)$ & 1-dimensional wave function
 \end{ddtabular}
 
-$$i \hslash \cdot \frac{\partial \psi(x,t)}{\partial t} = - \frac{\hslash^2}{2m} \cdot \frac{\partial^2 \psi(x,t)}{\partial x^2} + V(x,t) \psi(x,t)$$
+$$i \hslash \cdot \frac{\partial \psi}{\partial t}(\vec{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \psi(\vec{x},t) + V(\vec{x}, t) \phi(\vec{x},t)$$
+$$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
+$$\psi = A \cdot e^{i (\vec{k} \vec{x} - \omega t)} \qquad \vec{k} = \Vector[&]{k_x,k_y,k_z}, \quad \vec{x} =\Vector{x,y,z}$$
+$$E = \omega \hslash = \frac{\hslash^2 k^2}{2 m}, \qquad k^2 = \abs{k}^2$$
 
 \end{donotbrake}
 
+\begin{donotbrake}
+\subsubsection{Phase and Group Velocity}
+
+The \cdef{phase velocity $v_{\varphi}$} describes how fast the phase of the wave moves forward. 
+The \cdef{group velocity $v_g$} describes how fast the energy is moving forward. 
+$$v_{\varphi} = \frac{\omega}{k} \qquad v_g =\frac{\partial \omega}{\partial k}$$
+For a particle wave, the phase velocity $v_{\varphi}$ is half the group velocity $v_g$
+$$v_{\varphi} \cdot 2 = v_g$$
+\end{donotbrake}
+
+\begin{donotbrake}
+\subsubsection{Stationary States}
+
+In a stationary state, the wave function is a product of a function $\varphi(\vec{x})$ independent of time and a function $\chi(t)$ independent of space. 
+
+$$\psi_n(\vec{x},t) = \varphi_n(\vec{x}) \cdot \chi_n(t) = \varphi_n(\vec{x}) \cdot e^{-i \frac{E_n}{\hslash}t}$$
+$$-\frac{\hslash}{2m} \nabla^2 \varphi_n(\vec{x}) + V(\vec{x}) \varphi_n(\vec{x}) =\varphi_n(\vec{x}) \cdot E_n$$
+$$\iiint \abs{\psi}^2 d^3\vec{x} = \iiint \abs{\varphi}^2 d^3\vec{x} = 1$$
+$$\psi(\vec{x},t) = \sum a_n \varphi_n(\vec{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
+
+\end{donotbrake}
 
 \end{twocolumn}
 

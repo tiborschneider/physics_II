@@ -37,6 +37,7 @@
 \usepackage{supertabular}
 \usepackage{siunitx}
 \usepackage[europeanvoltages, europeancurrents, europeanresistors, americaninductors, smartlabels]{circuitikz}
+\usepackage{xparse}
 
 \DeclareMathOperator\arctanh{arctanh}
 \DeclareMathOperator\arsinh{arsinh} 
@@ -102,6 +103,17 @@
 \renewcommand{\hat}[1]{\widehat{#1}}
 \let\oldsi\si
 \renewcommand{\si}[1]{\; \left[\oldsi[per-mode = fraction]{#1}\right]}
+
+\ExplSyntaxOn
+\clist_new:N \l_feq_vector_clist
+\NewDocumentCommand{\Vector}{O{\\}mO{b}}{
+	\clist_set:Nn \l_feq_vector_clist {#2} % Set the list
+	\renewcommand*{\arraystretch}{1}
+	\begin{#3matrix}
+		\clist_use:Nn \l_feq_vector_clist {#1} % show it with separator from #1 (\\)
+	\end{#3matrix}
+}
+\ExplSyntaxOff
 
 \newcommand{\plotTF}[1]{
 \begin{tikzpicture}
