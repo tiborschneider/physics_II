@@ -38,6 +38,7 @@
 \usepackage{siunitx}
 \usepackage[europeanvoltages, europeancurrents, europeanresistors, americaninductors, smartlabels]{circuitikz}
 \usepackage{xparse}
+\usepackage{pdfpages}
 
 \DeclareMathOperator\arctanh{arctanh}
 \DeclareMathOperator\arsinh{arsinh} 
@@ -103,6 +104,8 @@
 \renewcommand{\hat}[1]{\widehat{#1}}
 \let\oldsi\si
 \renewcommand{\si}[1]{\; \left[\oldsi[per-mode = fraction]{#1}\right]}
+%\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand{\rom}[1]{\textup{\uppercase\expandafter{\romannumeral#1}}}
 
 \ExplSyntaxOn
 \clist_new:N \l_feq_vector_clist

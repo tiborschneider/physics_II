@@ -45,11 +45,13 @@
 \begin{tabular}{cc}
 	\begin{dtabular}
 		$\lambda \si{\meter}, \, \nu\si{\per\second}$ & Wavelength, Freq. \\
+		$k$ & Wavenumber \\
 		$E \si{\joule}$ & Energy \\
 		$\vec{F_c} \si{\newton}$ & Coulomb Force \\
 	\end{dtabular} &
 	\begin{mtabular}{c}
 		$\fmm \lambda = \frac{c}{\nu} \quad \fmm \nu = \frac{c}{\lambda} \quad \omega = 2 \pi \nu$ \\
+		$\fmm k = \frac{2 \pi \nu}{c}$ \\
 		$E = h \cdot \nu = \hslash \cdot \omega$ \\
 		$\fmm \abs{\vec{F_c}} = \frac{Q_1 \cdot Q_2}{4 \pi \epsilon_0 r^2}$ \\
 	\end{mtabular}
@@ -283,26 +285,36 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 
 
 \begin{donotbrake}
-	\subsection{Bragg diffraction}
+	\subsection{Double Slit and Bragg Diffraction}
 	
-	\begin{tabular}{cc}
+	\begin{tabular}{ccc}
 		\begin{tabular}{c}
 			\begin{tikzpicture} [scale=0.8, transform shape]
-			\draw [thick] (0,0.05) -- (0,0.35);
-			\foreach \y in {0.4,0.8,1.2,1.6,2.0} {
-				\draw [thick] (-0.05,\y - 0.05) -- (0.05,\y - 0.05);
-				\draw [thick] (-0.05,\y + 0.05) -- (0.05,\y + 0.05);
-				\draw [thick] (0,\y + 0.05) -- (0,\y + 0.35);
+			\draw [fill=black!10] (-0.05,0.05) rectangle (0.05,0.85) (-0.05,0.95) rectangle (0.05,1.45) (-0.05,1.55) rectangle (0.05,2.35);
+			\draw [|-|] (-0.2,1.5) -- (-0.2,0.9) node [pos=0.5,left] {\small $a$};
+			\draw [dashed] (0,1.2) -- (2,1.2);
+			\draw (0,1.2) -- (2,0.6);
+			\draw (1.5,1.2) arc (0:-17:1.5);
+			\draw (1.2,1) node {\small $\theta$}; 
+			\end{tikzpicture}
+		\end{tabular} &
+		
+		\begin{tabular}{c}
+			\begin{tikzpicture} [scale=0.8, transform shape]
+			\foreach \y in {0,0.4,0.8,1.2,1.6,2.0} {
+				\draw [fill=black!10] (-0.05,\y+0.05) rectangle (0.05,\y+0.35);
 			}
-			\draw (0.2,0.6) node {\small $a$};
+			\draw [|-|] (0.2,0.8) -- (0.2,0.4) node[pos=0.5, right] {\small $a$};
 			\draw [dashed] (0,1.6) -- (2,1.6);
 			\draw (0,1.6) -- (2,1);
 			\draw (1.5,1.6) arc (0:-17:1.5);
 			\draw (1.2,1.4) node {\small $\theta$}; 
 			\end{tikzpicture}
 		\end{tabular} &
-		\begin{mtabular}{c}
-			$\fmm \sin \theta = \frac{n \lambda}{a}$
+		\begin{mtabular}{cl}
+			Constructive & $\fmm \sin \theta = \frac{n \lambda}{a}$ \\
+			Destructive &$\fmm \sin \theta = \frac{(n +\frac{1}{2}) \lambda}{a} $ \\
+			 & $n \in \mathbb{Z}$
 		\end{mtabular}
 	\end{tabular}
 \end{donotbrake}
@@ -359,8 +371,8 @@ Every single particle must satisfy the following equation. The quantized energy 
 
 \begin{donotbrake}
 \subsection{Wave function}
-$$\psi(\vec{r}, t): \mathbb{R}^4 \rightarrow \mathbb{C} \qquad \iiint \abs{\psi(\vec{r},t)}^2 d^3r = 1 $$
-$$\psi(\vec{r}, t) = a \psi_1(\vec{r},t) + b \psi_2(\vec{r}, t), \qquad \abs{a}^2 + \abs{b}^2 = 1$$
+$$\psi(\vec{x}, t): \mathbb{R}^4 \rightarrow \mathbb{C} \qquad \iiint \abs{\psi(\vec{x},t)}^2 d^3r = 1 $$
+$$\psi(\vec{x}, t) = a \psi_1(\vec{x},t) + b \psi_2(\vec{x}, t), \qquad \abs{a}^2 + \abs{b}^2 = 1$$
 \end{donotbrake}
 
 \begin{donotbrake}
@@ -371,7 +383,7 @@ $$\psi(\vec{r}, t) = a \psi_1(\vec{r},t) + b \psi_2(\vec{r}, t), \qquad \abs{a}^
 	$m$ & mass \\
 \end{ddtabular}
 
-$$i \hslash \cdot \frac{\partial \psi}{\partial t}(\vec{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \psi(\vec{x},t) + V(\vec{x}, t) \phi(\vec{x},t)$$
+$$i \hslash \cdot \frac{\partial \psi}{\partial t}(\vec{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \psi(\vec{x},t) + V(\vec{x}, t) \psi(\vec{x},t)$$
 $$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
 $$\psi = A \cdot e^{i (\vec{k} \vec{x} - \omega t)} \qquad \vec{k} = \Vector[&]{k_x,k_y,k_z}, \quad \vec{x} =\Vector{x,y,z}$$
 $$E = \omega \hslash = \frac{\hslash^2 k^2}{2 m}, \qquad k^2 = \abs{k}^2$$
@@ -389,17 +401,223 @@ $$v_{\varphi} \cdot 2 = v_g$$
 \end{donotbrake}
 
 \begin{donotbrake}
-\subsubsection{Stationary States}
+\subsubsection{Stationary (Time independent) States}
 
 In a stationary state, the wave function is a product of a function $\varphi(\vec{x})$ independent of time and a function $\chi(t)$ independent of space. 
 
 $$\psi_n(\vec{x},t) = \varphi_n(\vec{x}) \cdot \chi_n(t) = \varphi_n(\vec{x}) \cdot e^{-i \frac{E_n}{\hslash}t}$$
-$$-\frac{\hslash}{2m} \nabla^2 \varphi_n(\vec{x}) + V(\vec{x}) \varphi_n(\vec{x}) =\varphi_n(\vec{x}) \cdot E_n$$
+$$-\frac{\hslash^3}{2m} \nabla^2 \varphi_n(\vec{x}) + V(\vec{x}) \varphi_n(\vec{x}) =\varphi_n(\vec{x}) \cdot E_n$$
 $$\iiint \abs{\psi}^2 d^3\vec{x} = \iiint \abs{\varphi}^2 d^3\vec{x} = 1$$
 $$\psi(\vec{x},t) = \sum a_n \varphi_n(\vec{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
 
+Requirements: The wave function must be continous, as well as it's derivative 
 \end{donotbrake}
 
+\subsubsection{Example: 1D infinite potential well}
+
+\begin{tabular}{cc}
+	\begin{tabular}{l}
+		\begin{tikzpicture}
+			\draw [fill=black!10, draw=none] (0,0) rectangle (1,2) (3,0) rectangle(4,2);
+			\draw [->] (0,0) -- (4.1,0) node[right] {$x$};
+			\draw [->] (1,0) -- (1,2.1) node[below right] {$V(x)$};
+			\draw (3,0) -- (3,2);
+			\draw (0.5,1) node {1} (2,1) node {2} (3.5,1) node {3};
+			\draw (1,0) node[below] {0} (3,0) node[below] {$L$};
+		\end{tikzpicture}
+	\end{tabular} &
+  \begin{mtabular}{l}
+  	$\fmm \psi_{1} =\psi_{3} = 0$ \\
+  	$\fmm -\frac{\hslash^3}{2m} \frac{\partial^2}{\partial x^2} \varphi_2(x,t) = E \varphi_2(x,t)$ \\
+  	$\fmm \varphi_2 = A \sin(k x) + B \cos(k x)$ \\
+  	Boundary cond.: $\fmm \varphi_2(0) = \varphi_2(L) = 0$ \\
+  \end{mtabular}
+\end{tabular}
+
+\begin{mtabular}{c}
+	$\fmm \varphi_{2_n} = A \cdot \sin (k_n x) \quad \psi_{2_n} = A \cdot \sin \left( k_n x \right)  \cdot e^{-i \frac{E_n}{\hslash} x}, \quad \text{\small Normalize:} \quad  A = \sqrt{\frac{2}{L}}$ \\
+	$\fmm E_n =n^2 \cdot \frac{\hslash^2 \pi^2}{2 m L} =n^2 \cdot E_0, \qquad k_n = \frac{n \pi}{L}$ \\
+\end{mtabular}
+
+\subsubsection{Example: 1D finite potential well}
+
+\begin{tabular}{cc}
+	\begin{tabular}{l}
+		\begin{tikzpicture}
+			\draw [->] (0,1.5) -- (4,1.5) node[right] {$x$};
+			\draw [->] (2,0) -- (2,2) node[above] {$V(x)$};
+			\draw [thick] (0,1.5) -- (1,1.5) -- (1,0.25) -- (3,0.25) -- (3,1.5) -- (3.9,1.5);
+			\draw (0.5,1) node {1} (2,1) node[right] {2} (3.5,1) node {3};
+			\draw (1,1.5) node[above] {$-L$} (3,1.5) node[above] {$L$};
+			\draw (2,0.25) node[above left] {$-V_0$};
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{tabular}{p{0.5\columnwidth}}
+		The Energy $E$ can be either bigger or smaller than 0. If $E>0$, the wave function will decay exponentially in region 1 and 3. If $E < 0$, the wave will propagate away from the potential well.
+	\end{tabular}
+\end{tabular}
+
+\begin{donotbrake}
+\textbf{Inside the well: }The general solution to the rearranged Schrödinger's is:
+
+$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2}\varphi_2(x) = (E-V_0) \varphi_2(x)$$
+$$\varphi_2(x) = A_2 e^{i k x} + A'_2 e^{-i k x} \qquad E = \frac{k^2 \hslash^2}{2m} \quad k = \sqrt{\frac{2 m (E-V_0)}{\hslash^2}}$$
+
+\end{donotbrake}
+
+\begin{donotbrake}
+
+\textbf{Outside the well: }There are two cases, which can apply:
+
+$$-\frac{\hslash}{2m} \frac{\partial^2}{\partial x^2}\varphi_{1}(x) = E \varphi_{1}(x)$$
+
+\begin{enumerate}
+	\item $E > 0$:\textbf{Unbound state}
+	$$ \varphi_1 =  A_1 e^{i k x} + A'_1 e^{-i k x} \qquad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
+	The unbound state does not make sense to be investigated, because the particle is free to be anywhere. In the following, only the unbound state is considered.
+	\item $E < 0$: \textbf{Bound state}
+	$$\varphi_1 = B_1 e^{\delta x} + B'_1 e^{-\delta x} \qquad \delta = \sqrt{-\frac{2 m E}{\hslash^2}}$$
+	
+	We see that as $x \rightarrow -\infty$, the Term $B'_1$, as well as $B_3$ approaches $\infty$. Since the wave function cannot approach $\infty$, $B'_1 = B_3 = 0$ is a condition.
+	
+	$$\varphi = \begin{case}
+		\varphi_1 = B_1 e^{\delta x} & x < -L \\
+		\varphi_2 = A_2 e^{i k x} + A'_2 e^{-i k x} & -L < x < L \\
+		\varphi_3 = B'_3 e^{-\delta x} & L < x
+		
+	\end{case}$$
+	  
+\end{enumerate}
+\end{donotbrake}
+
+\begin{donotbrake}
+	
+\textbf{Boundary conditions:} We require, that the wave function is continuous, as well as it's spacial derivative. Therefore, we have:
+
+$$\varphi_1 (-L) =\varphi_2(-L) \qquad \varphi_2 (L) = \varphi_3(L)$$
+$$\frac{\partial}{\partial x}\varphi_1 (-L) = \frac{\partial}{\partial x}\varphi_2(-L) \qquad \frac{\partial}{\partial x}\varphi_2 (L) =\frac{\partial}{\partial x}\varphi_3(L)$$
+
+\end{donotbrake}
+
+\begin{mtabular}{C{0.45\columnwidth}|C{0.45\columnwidth}}
+	\textbf{Even solutions}: only even (cosine) components &
+	\textbf{Odd solutions}: only odd (sine) components \\
+	$\fmm \abs{\cos \left(k L\right)} =\frac{k}{k_o}, \quad \tan (k L) > 0$ &
+	$\fmm \abs{\sin \left(k L\right)} =\frac{k}{k_o}, \quad \tan (k L) > 0$ \\
+	$\fmm k_0 = \sqrt{\frac{2 m V_0}{\hslash^2}}$ & 
+	$\fmm k_0 = \sqrt{\frac{2 m V_0}{\hslash^2}}$ \\
+	
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=$k$,ylabel=$\abs{\cos(kL)}$, axis lines=middle, xmin = 0, xmax = 6, ymin = 0, ymax = 1.5, width = 0.5\columnwidth, height = 4cm,
+	xtick ={0.8,5},
+	xticklabels ={$k_0$, $k'_0$},
+	ytick = {1}
+	]
+	\addplot [thick, samples=400, domain=0:5.8, color=cRed] {abs(cos(180*x/pi))};
+	\draw [dashed] (axis cs:0,1) -- (axis cs:5.8,1) (axis cs:0.8,0) -- (axis cs:0.8,1) -- (axis cs:0,0) (axis cs:5,0) -- (axis cs:5,1) -- (axis cs:0,0);
+	\draw [fill=black] (axis cs:0.64,0.8) circle (0.7mm);
+	\draw [fill=black] (axis cs:1.31,0.26) circle (0.7mm);
+	\draw [fill=black] (axis cs:3.84,0.77) circle (0.7mm);
+	\end{axis}
+	\end{tikzpicture} &
+	
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=$k$,ylabel=$\abs{\sin(kL)}$, axis lines=middle, xmin = 0, xmax = 6, ymin = 0, ymax = 1.5, width = 0.5\columnwidth, height = 4cm,
+	xtick ={0.8,4},
+	xticklabels ={$k_0$, $k'_0$},
+	ytick = {1}
+	]
+	\addplot [thick, samples=400, domain=0:5.8, color=cRed] {abs(sin(180*x/pi))};
+	\draw [dashed] (axis cs:0,1) -- (axis cs:5.8,1) (axis cs:0.8,0) -- (axis cs:0.8,1) -- (axis cs:0,0) (axis cs:4,0) -- (axis cs:4,1) -- (axis cs:0,0);
+	\draw [fill=black] (axis cs:2.47,0.62) circle (0.7mm);
+	\end{axis}
+	\end{tikzpicture} \\
+	
+\end{mtabular}	
+
+\subsection{Example: 1D potential step function}
+
+\begin{tabular}{cc}
+	\begin{tabular}{l}
+		\begin{tikzpicture}
+		\draw [->] (0,0.5) -- (4,0.5) node[right] {$x$};
+		\draw [->] (2,0) -- (2,2.5) node[above] {$V(x)$};
+		\draw [thick] (0,0.5) -- (2,0.5) -- (2,2) -- (4,2);
+		\draw (1,0.25) node {1} (3,0.25) node[right] {2};
+		\draw (2,2) node[above left] {$V_0$};
+		\draw [thick, cRed] plot[domain=0:6*pi, samples=600]  (2-\x/pi/3,{-0.25*sin(\x r) + 1.6});
+		\draw [thick, cRed, <-] (2,1.6) -- (1.95,1.52);
+		\draw [thick, cGreen] plot[domain=0:6*pi, samples=600]  (2+\x/pi/3,{0.15*sin(\x*1.5 r) + 1.6});
+		\draw [thick, cGreen, ->] (4,1.6) -- (4.05,1.53);
+		\draw [thick, cBlue] plot[domain=0:6*pi, samples=600]  (2-\x/pi/3,{0.1*sin(\x r) + 0.9});
+		\draw [thick, cBlue, <-] (-0.1,1) -- (-0.05,0.94); 
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{tabular}{p{0.5\columnwidth}}
+		An incoming plane wave from the left hits a potential step at $x = 0$. 
+		In region 1, two waves are added together, one is traveling to the right and one to the left.
+		If $E > V_0$, the wave is transmitted to region 2. 
+		if $E < V_0$, the wave decays exponentially in region 2.
+	\end{tabular}
+\end{tabular}
+
+In \textbf{Region 1}, the general solution to the Schrödinger equation is:
+$$\frac{-\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \varphi_1(x) = E \varphi_1(x), \quad \varphi_1(x) = A e^{i k_1 x} + B e^{-i k_1 x}, \quad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
+
+In \textbf{Region 2}, there are two cases, which can apply:
+$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \varphi_2 = (E - V_0) \varphi_2(x)$$
+
+\begin{enumerate}
+	\item $\mathbf{E > V_0}$: \textbf{Transmission}
+	$$\varphi_2 = C e^{i k_2 x}, \qquad k_2 = \sqrt{\frac{2 m (E - V_0)}{\hslash^2}}$$
+	\item $\mathbf{E < V_0}$: \textbf{Complete reflection}
+	$$\varphi_2 = C e^{\delta_2 x}, \qquad \delta_2 = \sqrt{\frac{2 m (V_0 - 2)}{\hslash^2}}$$
+\end{enumerate}
+
+Applying the \textbf{initial conditions}, which require the wave function and it's derivative to be continuous at $x = 0$, we get the following expression for $A$, $B$, $C$:
+
+$$\varphi_1(x=0) = \varphi_2(x=0) \qquad \frac{\partial }{\partial x} \varphi_1(x=0) = \frac{\partial}{\partial x} \varphi_2(x=0)$$
+
+\begin{center}
+\begin{mtabular}{c|c}
+	$\mathbf{E > V_0}$ & $\mathbf{E < V_0}$ \\
+	$A + B = C$ & $A + B = C$ \\
+	$k_1 (A - B) = k_2 C$ & $A = B$ \\
+\end{mtabular}
+\end{center}
+
+The \textbf{probability density function} $\abs{\psi(x,t)}^2 = \abs{\varphi(x)}^2 = \varphi \cdot \varphi^\ast$ can then be computed and sketched:
+
+\begin{center}
+\begin{mtabular}{c|c}
+	$\mathbf{E > V_0}$ & $\mathbf{E < V_0}$ \\
+	$\abs{\varphi_1}^2 = A^2 + B^2  + 2AB \cos (2 k_1 x)$ & $\abs{\varphi_1}^2 = 2 A^2 \cdot \left( 1 - \sin(2 k_1 x) \right)$ \\
+	$\abs{\varphi_2}^2 = C^2$ & $\fmm \abs{\varphi_2}^2 = C^2 \cdot e^{-2 \delta x}$ \\
+	\begin{tikzpicture}
+		\begin{axis} [xlabel = $x$, ylabel=$\abs{\varphi}^2$, axis lines=middle, xmin = -2, xmax = 1, ymin = 0, ymax = 2, width=0.5\columnwidth, height=3cm, xtick = {0}, ytick = {0}]
+			\addplot[thick, cRed, domain=-2:0, samples=99] {0.8 + 0.3*cos(800*x)};
+			\addplot[thick, cRed, domain=0:2] {1.1};
+		\end{axis}
+	\end{tikzpicture} &
+	\begin{tikzpicture}
+	\begin{axis} [xlabel = $x$, ylabel=$\abs{\varphi}^2$, axis lines=middle, xmin = -2, xmax = 1, ymin = 0, ymax = 2, width=0.5\columnwidth, height=3cm, xtick = {0}, ytick = {0}]
+	\addplot[thick, cRed, domain=-2:0, samples=99] {0.6 + 0.6*cos(800*x + 50)};
+	\addplot[thick, cRed, domain=0:2] {e^(-7*x)};
+	\end{axis}
+	\end{tikzpicture}
+\end{mtabular}
+\end{center}
+
+To find the \textbf{transmission coefficient} $T$ and the \textbf{reflection coefficient} $R$, we normalize $A = 1$. Then, we can define $B = \sqrt{R}$ and $C =\sqrt{T}$. Then, we can solve for $R$ and $T$:
+
+$$T = \frac{4 k_1 k_2}{(k_1 + k_2)^2} \qquad R = \left(\frac{k_1 - k_2}{k_1 + k_2}\right)^2$$
+
+If $E < V_0$, nothing is transmitted and therefore $T = 0$ and $R = 1$. 
+
 \end{twocolumn}
+
+\pagebreak
+\onecolumn
+\includepdf[angle=-90,pagecommand={\section{Periodic Table of the Elements}}, scale=0.9]{periodic_table.pdf}
 
 \end{document}
