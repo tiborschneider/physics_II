@@ -545,12 +545,13 @@ $$\frac{\partial}{\partial x}\varphi_1 (-L) = \frac{\partial}{\partial x}\varphi
 		\draw [thick] (0,0.5) -- (2,0.5) -- (2,2) -- (4,2);
 		\draw (1,0.25) node {1} (3,0.25) node[right] {2};
 		\draw (2,2) node[above left] {$V_0$};
-		\draw [thick, cRed] plot[domain=0:6*pi, samples=600]  (2-\x/pi/3,{-0.25*sin(\x r) + 1.6});
+		\draw [thick, cRed] plot[domain=0:6*pi, samples=100]  (2-\x/pi/3,{-0.25*sin(\x r) + 1.6});
 		\draw [thick, cRed, <-] (2,1.6) -- (1.95,1.52);
-		\draw [thick, cGreen] plot[domain=0:6*pi, samples=600]  (2+\x/pi/3,{0.15*sin(\x*1.5 r) + 1.6});
+		\draw [thick, cGreen] plot[domain=0:6*pi, samples=100]  (2+\x/pi/3,{0.15*sin(\x*1.5 r) + 1.6});
 		\draw [thick, cGreen, ->] (4,1.6) -- (4.05,1.53);
-		\draw [thick, cBlue] plot[domain=0:6*pi, samples=600]  (2-\x/pi/3,{0.1*sin(\x r) + 0.9});
+		\draw [thick, cBlue] plot[domain=0:6*pi, samples=100]  (2-\x/pi/3,{0.1*sin(\x r) + 0.9});
 		\draw [thick, cBlue, <-] (-0.1,1) -- (-0.05,0.94); 
+		\draw (0.85,1.5) node {\color{cRed} $A$} (1.15,0.8) node {\color{cBlue} $B$} (3,1.3) node {\color{cGreen} $C$};
 		\end{tikzpicture}
 	\end{tabular} &
 	\begin{tabular}{p{0.5\columnwidth}}
