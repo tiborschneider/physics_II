@@ -371,8 +371,8 @@ Every single particle must satisfy the following equation. The quantized energy 
 
 \begin{donotbrake}
 \subsection{Wave function}
-$$\psi(\vec{x}, t): \mathbb{R}^4 \rightarrow \mathbb{C} \qquad \iiint \abs{\psi(\vec{x},t)}^2 d^3r = 1 $$
-$$\psi(\vec{x}, t) = a \psi_1(\vec{x},t) + b \psi_2(\vec{x}, t), \qquad \abs{a}^2 + \abs{b}^2 = 1$$
+$$\psi(\bm{x}, t): \mathbb{R}^4 \rightarrow \mathbb{C} \qquad \iiint \abs{\psi(\bm{x},t)}^2 d^3r = 1 $$
+$$\psi(\bm{x}, t) = a \psi_1(\bm{x},t) + b \psi_2(\bm{x}, t), \qquad \abs{a}^2 + \abs{b}^2 = 1$$
 \end{donotbrake}
 
 \begin{donotbrake}
@@ -383,9 +383,9 @@ $$\psi(\vec{x}, t) = a \psi_1(\vec{x},t) + b \psi_2(\vec{x}, t), \qquad \abs{a}^
 	$m$ & mass \\
 \end{ddtabular}
 
-$$i \hslash \cdot \frac{\partial \psi}{\partial t}(\vec{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \psi(\vec{x},t) + V(\vec{x}, t) \psi(\vec{x},t)$$
+$$i \hslash \cdot \frac{\partial \psi}{\partial t}(\bm{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \psi(\bm{x},t) + V(\bm{x}, t) \psi(\bm{x},t)$$
 $$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
-$$\psi = A \cdot e^{i (\vec{k} \vec{x} - \omega t)} \qquad \vec{k} = \Vector[&]{k_x,k_y,k_z}, \quad \vec{x} =\Vector{x,y,z}$$
+$$\psi = A \cdot e^{i (\bm{k} \bm{x} - \omega t)} \qquad \bm{k} = \Vector[&]{k_x,k_y,k_z}, \quad \bm{x} =\Vector{x,y,z}$$
 $$E = \omega \hslash = \frac{\hslash^2 k^2}{2 m}, \qquad k^2 = \abs{k}^2$$
 
 \end{donotbrake}
@@ -403,12 +403,12 @@ $$v_{\varphi} \cdot 2 = v_g$$
 \begin{donotbrake}
 \subsubsection{Stationary (Time independent) States}
 
-In a stationary state, the wave function is a product of a function $\varphi(\vec{x})$ independent of time and a function $\chi(t)$ independent of space. 
+In a stationary state, the wave function is a product of a function $\varphi(\bm{x})$ independent of time and a function $\chi(t)$ independent of space. 
 
-$$\psi_n(\vec{x},t) = \varphi_n(\vec{x}) \cdot \chi_n(t) = \varphi_n(\vec{x}) \cdot e^{-i \frac{E_n}{\hslash}t}$$
-$$-\frac{\hslash^3}{2m} \nabla^2 \varphi_n(\vec{x}) + V(\vec{x}) \varphi_n(\vec{x}) =\varphi_n(\vec{x}) \cdot E_n$$
-$$\iiint \abs{\psi}^2 d^3\vec{x} = \iiint \abs{\varphi}^2 d^3\vec{x} = 1$$
-$$\psi(\vec{x},t) = \sum a_n \varphi_n(\vec{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
+$$\psi_n(\bm{x},t) = \varphi_n(\bm{x}) \cdot \chi_n(t) = \varphi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t}$$
+$$-\frac{\hslash^3}{2m} \nabla^2 \varphi_n(\bm{x}) + V(\bm{x}) \varphi_n(\bm{x}) =\varphi_n(\bm{x}) \cdot E_n$$
+$$\iiint \abs{\psi}^2 d^3\bm{x} = \iiint \abs{\varphi}^2 d^3\bm{x} = 1$$
+$$\psi(\bm{x},t) = \sum a_n \varphi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
 
 Requirements: The wave function must be continous, as well as it's derivative 
 \end{donotbrake}
@@ -668,6 +668,69 @@ $$R = \left(\frac{A_1}{A'_1}\right)^2, \qquad T = \left(\frac{A_3}{A_1}\right)^2
 If $\mathbf{E > V_0}$, the transmission coefficient has a maximum. If $k_2 \ell = n \pi \, \Rightarrow \, T = 1$ (\textbf{resonance}). The minimum of $T$u is at: $k_2 \ell = \pi/2 + n\pi$.
 
 \end{twocolumn}
+
+\section{Wave Function Space (Hilbert Space)}
+
+\subsection{Inner Product}
+
+The inner product $\braket{\psi_1 | \psi_2}$ is defined like the scalar product for vectors. If the inner product of two wave functions is 0, those two wave functions are \textbf{orthogonal}.
+
+$$\braket{\psi_1 | \psi_2} = \infint \psi_1^\ast(\bm{x},t) \psi_2(\bm{x},t) d^3 \bm{x}$$
+$$\braket{\psi | \psi} = \infint \psi^\ast(\bm{x},t) \psi(\bm{x},t) d^3 \bm{x} = \infint \abs{\psi(\bm{x},t)}^2 d^3 \bm{x} = 1$$
+
+
+\subsection{Fourier Transform}
+
+$$\psi(x) = \frac{1}{\sqrt{2 \pi \hslash}} \infint e^{\frac{i p x}{\hslash}} \varphi(p) dp, \quad \varphi(p) = \frac{1}{\sqrt{2 \pi \hslash}} \infint e^{\frac{i p x}{\hslash}} \psi(x) dx$$
+$$\psi(\bm{\vec{x}}) = \frac{1}{(2 \pi \hslash)^{3/2}} \infint e^{\frac{i \bm{\vec{p}} \bm{\vec{x}}}{\hslash}} \varphi(\bm{\vec{p}}) d\bm{\vec{p}}, \quad \varphi(\bm{\vec{p}}) = \frac{1}{(2 \pi \hslash)^{3/2}} \infint e^{\frac{i \bm{\vec{p}} \bm{\vec{x}}}{\hslash}} \psi(\bm{\vec{x}}) d\bm{\vec{x}}$$
+
+$$\infint \psi_1^\ast(x) \cdot \psi_2(x) \cdot dx = \infint \varphi^\ast_1(p) \cdot \varphi_2(p) \cdot dp$$
+
+\section{Observable Measurements, Time-dependence}
+
+Doing a measurement in quantum mechanics (observable) can be interpreted as applying an operator $\hat{A}$ on the wave function $\psi(\bm{x},t)$. For example, to compute the expected position $\langle \bm{x} \rangle_\psi$, we apply the operator $\hat{\bm{x}} = \bm{x}$ to average the wave function:
+
+$$\langle \bm{x} \rangle_\psi = \iiint \psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \psi(\bm{x},t) d^3 \bm{x} = \iiint \bm{x} \cdot \abs{\psi(\bm{x},t)}^2 d^3\bm{x}$$
+
+\begin{center}
+	\begin{tabular}{lll}
+		Name & Operator \\ \toprule
+		Position & $\hat{\bm{x}} = \left[ \bm{x} \right]$ \\
+		Momentum & $\hat{\bm{p}} = \left[-i \hslash \bm{\nabla}\right]$ & $\bm{\nabla} = \Vector{\pdif{}{x} & \pdif{}{y} & \pdif{}{z}}^T$ \\
+		Hamiltonian & $\hat{H} = \left[ -\frac{\hslash}{2m} \nabla^2 + V(\bm{x}) \right] $ & $\nabla^2 = \pdiff{}{x} + \pdiff{}{y} + \pdiff{}{z}$
+	\end{tabular}
+\end{center}
+
+\subsection{Eigenstates and Eigenvalues}
+
+An Observable has an Operator $\hat{A}$. a state $u_n(x)$ is called an eigenstate the operator applied on the wave function acts like a scalar multiplication to it. Then, the measurement of the general state $\psi(x)$ is a superposition of all the eigenstates.
+
+$$\hat{A} u_n(x) = a_n u_n(x), \quad \infint u^\ast_n(x) \hat{A} u_n(x) dx = a_n$$
+$$\hat{A} \psi(x) = \sum_n c_n u_n(x)$$
+
+\subsection{Harmonic Oscillator}
+
+A Quantum mechanical harmonic oscillator can be interpreted as the solution to the Schrödinger equation:
+$$\left[ \frac{-\hslash^2}{2m} \pdiff{}{x}  + V(x) \right] \psi(x) = E \psi(x), \quad V(x) = \frac{1}{2} k x^2 = \frac{m \omega^2}{2} x^2$$
+To simplify the equation, we define a new length scale and energy:
+$$a = \sqrt{\frac{\hslash}{m \omega}}, \quad \tilde{x} = \frac{x}{a}, \quad \tilde{E} = \frac{E}{\hslash \omega} \, \Rightarrow \, \frac{1}{2} \left[-\pdiff{}{\tilde{x}} + \tilde{x}^2\right] \varphi(\tilde{x}) = \tilde{E} \varphi(\tilde{x})$$
+Then, the solutions to the equation is:
+$$E_n = \left(n + \frac{1}{2}\right) \hslash \omega, \quad \varphi(\tilde{x}) = c_n H_n(\tilde{x}) e^{-
+\tilde{x}/2}, \quad H_n(\tilde{x}) = (-1)^n e^{\tilde{x}^2} \cdot \frac{\partial^n}{\partial \tilde{x}^n} e^{-\tilde{x}^2}$$
+$$H_0(\tilde{x}) = 1, \quad H_1(\tilde{x}) = 2 \tilde{x}, \quad H_2(\tilde{x}) = 4 \tilde{x}^2 - 2, \quad H_3(\tilde{x}) =8 \tilde{x}^3 - 12\tilde{x}$$
+$$\psi_n(x) = \frac{1}{\sqrt[4]{\pi} \sqrt{2^n n! a}} \cdot H_n\left(\frac{x}{a}\right) e^{-\frac{x^2}{2a^2}}$$
+
+\begin{center}
+	\begin{tikzpicture}
+	\begin{axis}[xlabel=$\frac{x}{a}$,ylabel=$E$, axis lines=middle, xmin = -4, xmax = 4, ymin = 0, ymax = 10, width=0.7\columnwidth, height=5.5cm, xtick = \empty, ytick = {1, 3, 5, 7}, yticklabels = {$\frac{\hslash \omega}{2}$}]
+		\addplot [thick, color=cRed, samples=50] {x^2*2/3};
+		\addplot [color=cGreen, samples=50, domain=-3.5:3.5] {exp(-x^2) + 1};
+		\addplot [color=cGreen, samples=50, domain=-3.5:3.5] {exp(-x^2)*x*3/2 + 3};
+		\addplot [color=cGreen, samples=50, domain=-3.5:3.5] {exp(-x^2)*(2*x^2-1) + 5};
+		\addplot [color=cGreen, samples=50, domain=-3.5:3.5] {exp(-x^2)*(2*x^3-3*x)*2/3 + 7};
+	\end{axis}
+	\end{tikzpicture}
+\end{center}
 
 \pagebreak
 \onecolumn

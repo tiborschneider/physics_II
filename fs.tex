@@ -39,6 +39,8 @@
 \usepackage[europeanvoltages, europeancurrents, europeanresistors, americaninductors, smartlabels]{circuitikz}
 \usepackage{xparse}
 \usepackage{pdfpages}
+\usepackage{bm}
+\usepackage{braket}
 
 \DeclareMathOperator\arctanh{arctanh}
 \DeclareMathOperator\arsinh{arsinh} 
@@ -106,6 +108,8 @@
 \renewcommand{\si}[1]{\; \left[\oldsi[per-mode = fraction]{#1}\right]}
 %\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \newcommand{\rom}[1]{\textup{\uppercase\expandafter{\romannumeral#1}}}
+\newcommand{\pdif}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdiff}[2]{\frac{\partial^2 #1}{\partial #2 ^2}}
 
 \ExplSyntaxOn
 \clist_new:N \l_feq_vector_clist
