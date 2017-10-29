@@ -383,9 +383,9 @@ $$\psi(\bm{x}, t) = a \psi_1(\bm{x},t) + b \psi_2(\bm{x}, t), \qquad \abs{a}^2 +
 	$m$ & mass \\
 \end{ddtabular}
 
-$$i \hslash \cdot \frac{\partial \psi}{\partial t}(\bm{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \psi(\bm{x},t) + V(\bm{x}, t) \psi(\bm{x},t)$$
+$$i \hslash \cdot \frac{\partial \Psi}{\partial t}(\bm{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \Psi(\bm{x},t) + V(\bm{x}, t) \Psi(\bm{x},t)$$
 $$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
-$$\psi = A \cdot e^{i (\bm{k} \bm{x} - \omega t)} \qquad \bm{k} = \Vector[&]{k_x,k_y,k_z}, \quad \bm{x} =\Vector{x,y,z}$$
+$$\Psi = A \cdot e^{i (\bm{k} \bm{x} - \omega t)} \qquad \bm{k} = \Vector[&]{k_x,k_y,k_z}, \quad \bm{x} =\Vector{x,y,z}$$
 $$E = \omega \hslash = \frac{\hslash^2 k^2}{2 m}, \qquad k^2 = \abs{k}^2$$
 
 \end{donotbrake}
@@ -405,10 +405,10 @@ $$v_{\varphi} \cdot 2 = v_g$$
 
 In a stationary state, the wave function is a product of a function $\varphi(\bm{x})$ independent of time and a function $\chi(t)$ independent of space. 
 
-$$\psi_n(\bm{x},t) = \varphi_n(\bm{x}) \cdot \chi_n(t) = \varphi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t}$$
-$$-\frac{\hslash^3}{2m} \nabla^2 \varphi_n(\bm{x}) + V(\bm{x}) \varphi_n(\bm{x}) =\varphi_n(\bm{x}) \cdot E_n$$
-$$\iiint \abs{\psi}^2 d^3\bm{x} = \iiint \abs{\varphi}^2 d^3\bm{x} = 1$$
-$$\psi(\bm{x},t) = \sum a_n \varphi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
+$$\Psi_n(\bm{x},t) = \psi_n(\bm{x}) \cdot \chi_n(t) = \psi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t}$$
+$$-\frac{\hslash^3}{2m} \nabla^2 \psi_n(\bm{x}) + V(\bm{x}) \psi_n(\bm{x}) =\psi_n(\bm{x}) \cdot E_n$$
+$$\iiint \abs{\Psi}^2 d^3\bm{x} = \iiint \abs{\psi}^2 d^3\bm{x} = 1$$
+$$\Psi(\bm{x},t) = \sum a_n \psi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
 
 Requirements: The wave function must be continous, as well as it's derivative 
 \end{donotbrake}
@@ -427,15 +427,15 @@ Requirements: The wave function must be continous, as well as it's derivative
 		\end{tikzpicture}
 	\end{tabular} &
   \begin{mtabular}{l}
-  	$\fmm \psi_{1} =\psi_{3} = 0$ \\
-  	$\fmm -\frac{\hslash^3}{2m} \frac{\partial^2}{\partial x^2} \varphi_2(x,t) = E \varphi_2(x,t)$ \\
-  	$\fmm \varphi_2 = A \sin(k x) + B \cos(k x)$ \\
-  	Boundary cond.: $\fmm \varphi_2(0) = \varphi_2(L) = 0$ \\
+  	$\fmm \Psi_{1} =\Psi_{3} = 0$ \\
+  	$\fmm -\frac{\hslash^3}{2m} \frac{\partial^2}{\partial x^2} \psi_2(x,t) = E \psi_2(x,t)$ \\
+  	$\fmm \psi_2 = A \sin(k x) + B \cos(k x)$ \\
+  	Boundary cond.: $\fmm \psi_2(0) = \psi_2(L) = 0$ \\
   \end{mtabular}
 \end{tabular}
 
 \begin{mtabular}{c}
-	$\fmm \varphi_{2_n} = A \cdot \sin (k_n x) \quad \psi_{2_n} = A \cdot \sin \left( k_n x \right)  \cdot e^{-i \frac{E_n}{\hslash} x}, \quad \text{\small Normalize:} \quad  A = \sqrt{\frac{2}{L}}$ \\
+	$\fmm \psi_{2_n} = A \cdot \sin (k_n x) \quad \Psi_{2_n} = A \cdot \sin \left( k_n x \right)  \cdot e^{-i \frac{E_n}{\hslash} x}, \quad \text{\small Normalize:} \quad  A = \sqrt{\frac{2}{L}}$ \\
 	$\fmm E_n =n^2 \cdot \frac{\hslash^2 \pi^2}{2 m L} =n^2 \cdot E_0, \qquad k_n = \frac{n \pi}{L}$ \\
 \end{mtabular}
 
@@ -446,7 +446,7 @@ Requirements: The wave function must be continous, as well as it's derivative
 		\begin{tikzpicture}
 			\draw [->] (0,1.5) -- (4,1.5) node[right] {$x$};
 			\draw [->] (2,0) -- (2,2) node[above] {$V(x)$};
-			\draw [thick] (0,1.5) -- (1,1.5) -- (1,0.25) -- (3,0.25) -- (3,1.5) -- (3.9,1.5);
+			\draw [thick, cRed] (0,1.5) -- (1,1.5) -- (1,0.25) -- (3,0.25) -- (3,1.5) -- (3.9,1.5);
 			\draw (0.5,1) node {1} (2,1) node[right] {2} (3.5,1) node {3};
 			\draw (1,1.5) node[above] {$-L$} (3,1.5) node[above] {$L$};
 			\draw (2,0.25) node[above left] {$-V_0$};
@@ -460,8 +460,8 @@ Requirements: The wave function must be continous, as well as it's derivative
 \begin{donotbrake}
 \textbf{Inside the well: }The general solution to the rearranged Schrödinger's is:
 
-$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2}\varphi_2(x) = (E-V_0) \varphi_2(x)$$
-$$\varphi_2(x) = A_2 e^{i k x} + A'_2 e^{-i k x} \qquad E = \frac{k^2 \hslash^2}{2m} \quad k = \sqrt{\frac{2 m (E-V_0)}{\hslash^2}}$$
+$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2}\psi_2(x) = (E-V_0) \psi_2(x)$$
+$$\psi_2(x) = A_2 e^{i k x} + A'_2 e^{-i k x} \qquad E = \frac{k^2 \hslash^2}{2m} \quad k = \sqrt{\frac{2 m (E-V_0)}{\hslash^2}}$$
 
 \end{donotbrake}
 
@@ -469,21 +469,21 @@ $$\varphi_2(x) = A_2 e^{i k x} + A'_2 e^{-i k x} \qquad E = \frac{k^2 \hslash^2}
 
 \textbf{Outside the well: }There are two cases, which can apply:
 
-$$-\frac{\hslash}{2m} \frac{\partial^2}{\partial x^2}\varphi_{1}(x) = E \varphi_{1}(x)$$
+$$-\frac{\hslash}{2m} \frac{\partial^2}{\partial x^2}\psi_{1}(x) = E \psi_{1}(x)$$
 
 \begin{enumerate}
 	\item $E > 0$:\textbf{Unbound state}
-	$$ \varphi_1 =  A_1 e^{i k x} + A'_1 e^{-i k x} \qquad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
+	$$ \psi_1 =  A_1 e^{i k x} + A'_1 e^{-i k x} \qquad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
 	The unbound state does not make sense to be investigated, because the particle is free to be anywhere. In the following, only the unbound state is considered.
 	\item $E < 0$: \textbf{Bound state}
-	$$\varphi_1 = B_1 e^{\delta x} + B'_1 e^{-\delta x} \qquad \delta = \sqrt{-\frac{2 m E}{\hslash^2}}$$
+	$$\psi_1 = B_1 e^{\delta x} + B'_1 e^{-\delta x} \qquad \delta = \sqrt{-\frac{2 m E}{\hslash^2}}$$
 	
 	We see that as $x \rightarrow -\infty$, the Term $B'_1$, as well as $B_3$ approaches $\infty$. Since the wave function cannot approach $\infty$, $B'_1 = B_3 = 0$ is a condition.
 	
-	$$\varphi = \begin{case}
-		\varphi_1 = B_1 e^{\delta x} & x < -L \\
-		\varphi_2 = A_2 e^{i k x} + A'_2 e^{-i k x} & -L < x < L \\
-		\varphi_3 = B'_3 e^{-\delta x} & L < x
+	$$\psi = \begin{case}
+		\psi_1 = B_1 e^{\delta x} & x < -L \\
+		\psi_2 = A_2 e^{i k x} + A'_2 e^{-i k x} & -L < x < L \\
+		\psi_3 = B'_3 e^{-\delta x} & L < x
 		
 	\end{case}$$
 	  
@@ -494,8 +494,8 @@ $$-\frac{\hslash}{2m} \frac{\partial^2}{\partial x^2}\varphi_{1}(x) = E \varphi_
 	
 \textbf{Boundary conditions:} We require, that the wave function is continuous, as well as it's spacial derivative. Therefore, we have:
 
-$$\varphi_1 (-L) =\varphi_2(-L) \qquad \varphi_2 (L) = \varphi_3(L)$$
-$$\frac{\partial}{\partial x}\varphi_1 (-L) = \frac{\partial}{\partial x}\varphi_2(-L) \qquad \frac{\partial}{\partial x}\varphi_2 (L) =\frac{\partial}{\partial x}\varphi_3(L)$$
+$$\psi_1 (-L) =\psi_2(-L) \qquad \psi_2 (L) = \psi_3(L)$$
+$$\frac{\partial}{\partial x}\psi_1 (-L) = \frac{\partial}{\partial x}\psi_2(-L) \qquad \frac{\partial}{\partial x}\psi_2 (L) =\frac{\partial}{\partial x}\psi_3(L)$$
 
 \end{donotbrake}
 
@@ -563,21 +563,21 @@ $$\frac{\partial}{\partial x}\varphi_1 (-L) = \frac{\partial}{\partial x}\varphi
 \end{tabular}
 
 In \textbf{Region 1}, the general solution to the Schrödinger equation is:
-$$\frac{-\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \varphi_1(x) = E \varphi_1(x), \quad \varphi_1(x) = A e^{i k_1 x} + B e^{-i k_1 x}, \quad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
+$$\frac{-\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \psi_1(x) = E \psi_1(x), \quad \psi_1(x) = A e^{i k_1 x} + B e^{-i k_1 x}, \quad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
 
 In \textbf{Region 2}, there are two cases, which can apply:
-$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \varphi_2 = (E - V_0) \varphi_2(x)$$
+$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \psi_2 = (E - V_0) \psi_2(x)$$
 
 \begin{enumerate}
 	\item $\mathbf{E > V_0}$: \textbf{Transmission}
-	$$\varphi_2 = C e^{i k_2 x}, \qquad k_2 = \sqrt{\frac{2 m (E - V_0)}{\hslash^2}}$$
+	$$\psi_2 = C e^{i k_2 x}, \qquad k_2 = \sqrt{\frac{2 m (E - V_0)}{\hslash^2}}$$
 	\item $\mathbf{E < V_0}$: \textbf{Complete reflection}
-	$$\varphi_2 = C e^{\delta_2 x}, \qquad \delta_2 = \sqrt{\frac{2 m (V_0 - 2)}{\hslash^2}}$$
+	$$\psi_2 = C e^{\delta_2 x}, \qquad \delta_2 = \sqrt{\frac{2 m (V_0 - 2)}{\hslash^2}}$$
 \end{enumerate}
 
 Applying the \textbf{initial conditions}, which require the wave function and it's derivative to be continuous at $x = 0$, we get the following expression for $A$, $B$, $C$:
 
-$$\varphi_1(x=0) = \varphi_2(x=0) \qquad \frac{\partial }{\partial x} \varphi_1(x=0) = \frac{\partial}{\partial x} \varphi_2(x=0)$$
+$$\psi_1(x=0) = \psi_2(x=0) \qquad \frac{\partial }{\partial x} \psi_1(x=0) = \frac{\partial}{\partial x} \psi_2(x=0)$$
 
 \begin{center}
 \begin{mtabular}{c|c}
@@ -592,8 +592,8 @@ The \textbf{probability density function} $\abs{\psi(x,t)}^2 = \abs{\varphi(x)}^
 \begin{center}
 \begin{mtabular}{c|c}
 	$\mathbf{E > V_0}$ & $\mathbf{E < V_0}$ \\
-	$\abs{\varphi_1}^2 = A^2 + B^2  + 2AB \cos (2 k_1 x)$ & $\abs{\varphi_1}^2 = 2 A^2 \cdot \left( 1 - \sin(2 k_1 x) \right)$ \\
-	$\abs{\varphi_2}^2 = C^2$ & $\fmm \abs{\varphi_2}^2 = C^2 \cdot e^{-2 \delta x}$ \\
+	$\abs{\psi_1}^2 = A^2 + B^2  + 2AB \cos (2 k_1 x)$ & $\abs{\psi_1}^2 = 2 A^2 \cdot \left( 1 - \sin(2 k_1 x) \right)$ \\
+	$\abs{\psi_2}^2 = C^2$ & $\fmm \abs{\psi_2}^2 = C^2 \cdot e^{-2 \delta x}$ \\
 	\begin{tikzpicture}
 		\begin{axis} [xlabel = $x$, ylabel=$\abs{\varphi}^2$, axis lines=middle, xmin = -2, xmax = 1, ymin = 0, ymax = 2, width=0.5\columnwidth, height=3cm, xtick = {0}, ytick = {0}]
 			\addplot[thick, cRed, domain=-2:0, samples=99] {0.8 + 0.3*cos(800*x)};
@@ -622,7 +622,7 @@ If $E < V_0$, nothing is transmitted and therefore $T = 0$ and $R = 1$.
 		\begin{tikzpicture}
 		\draw [->] (0,0.5) -- (4,0.5) node[right] {$x$};
 		\draw [->] (2,0) -- (2,2.5) node[above] {$V(x)$};
-		\draw [thick] (0,0.5) -- (1.5,0.5) -- (1.5,2) -- (2.5,2) -- (2.5,0.5) -- (4,0.5);
+		\draw [thick, cRed] (0,0.5) -- (1.5,0.5) -- (1.5,2) -- (2.5,2) -- (2.5,0.5) -- (4,0.5);
 		\draw (1,1.25) node {1} (2,1.25) node[right] {2} (3,1.25) node[right] {3};
 		\draw (2,2) node[above left] {$V_0$};
 		\draw (1.5,0.25) node {$-\ell/2$} (2.5,0.25) node{$\ell/2$};
@@ -642,7 +642,7 @@ If $E < V_0$, nothing is transmitted and therefore $T = 0$ and $R = 1$.
 \end{tabular}
 
 In \textbf{Region 1 and 3}, the general expression for the wave equation is the following:
-$$\varphi_j(x) = A_j e^{i k_j x} + A'_j e^{-i k_j x}, \qquad k_j = \sqrt{\frac{2mE}{\hslash^2}}, \quad j \in \left\{ 1, 3 \right\}$$
+$$\psi_j(x) = A_j e^{i k_j x} + A'_j e^{-i k_j x}, \qquad k_j = \sqrt{\frac{2mE}{\hslash^2}}, \quad j \in \left\{ 1, 3 \right\}$$
 In \textbf{Region 2}, the expression is depending on $V_0$. There are two cases:
 \begin{enumerate}
 	\item $\mathbf{E < V_0}$: $\fmm \varphi_2 = B_2 e^{\delta_2 x} + B'_2 e^{- \delta_2 x}, \qquad \delta_2 = \sqrt{\frac{2m(V_0 - E)}{\hslash^2}}$
@@ -650,8 +650,8 @@ In \textbf{Region 2}, the expression is depending on $V_0$. There are two cases:
 \end{enumerate}
 Apply \textbf{boundary conditions} at $x = -\ell/2$ and $x = \ell/2$ in order to determine all constants. If the wave is only traveling from left to right, then $A'_3 = 0$.
 
-$$\varphi_1(-\ell/2) = \varphi_2(-\ell/2), \quad \varphi_2(\ell/2) = \varphi_3(\ell/2)$$
-$$\frac{\partial}{\partial x}\varphi_1(-\ell/2) = \frac{\partial}{\partial x}\varphi_2(-\ell/2), \quad \frac{\partial}{\partial x}\varphi_2(\ell/2) = \frac{\partial}{\partial x}\varphi_3(\ell/2)$$
+$$\psi_1(-\ell/2) = \psi_2(-\ell/2), \quad \psi_2(\ell/2) = \psi_3(\ell/2)$$
+$$\frac{\partial}{\partial x}\psi_1(-\ell/2) = \frac{\partial}{\partial x}\psi_2(-\ell/2), \quad \frac{\partial}{\partial x}\psi_2(\ell/2) = \frac{\partial}{\partial x}\psi_3(\ell/2)$$
 
 Then, the \textbf{transmission coefficient} $T$ and the \textbf{reflection coefficient} $R$ can be calculated as following:
 
@@ -690,14 +690,14 @@ $$\infint \psi_1^\ast(x) \cdot \psi_2(x) \cdot dx = \infint \varphi^\ast_1(p) \c
 
 Doing a measurement in quantum mechanics (observable) can be interpreted as applying an operator $\hat{A}$ on the wave function $\psi(\bm{x},t)$. For example, to compute the expected position $\langle \bm{x} \rangle_\psi$, we apply the operator $\hat{\bm{x}} = \bm{x}$ to average the wave function:
 
-$$\langle \bm{x} \rangle_\psi = \iiint \psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \psi(\bm{x},t) d^3 \bm{x} = \iiint \bm{x} \cdot \abs{\psi(\bm{x},t)}^2 d^3\bm{x}$$
+$$\langle \bm{x} \rangle_\Psi = \iiint \Psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \Psi(\bm{x},t) d^3 \bm{x} = \iiint \bm{x} \cdot \abs{\Psi(\bm{x},t)}^2 d^3\bm{x}$$
 
 \begin{center}
 	\begin{tabular}{lll}
 		Name & Operator \\ \toprule
 		Position & $\hat{\bm{x}} = \left[ \bm{x} \right]$ \\
 		Momentum & $\hat{\bm{p}} = \left[-i \hslash \bm{\nabla}\right]$ & $\bm{\nabla} = \Vector{\pdif{}{x} & \pdif{}{y} & \pdif{}{z}}^T$ \\
-		Hamiltonian & $\hat{H} = \left[ -\frac{\hslash}{2m} \nabla^2 + V(\bm{x}) \right] $ & $\nabla^2 = \pdiff{}{x} + \pdiff{}{y} + \pdiff{}{z}$
+		Hamiltonian & $\hat{H} = \left[ -\frac{\hslash^2}{2m} \nabla^2 + V(\bm{x}) \right] $ & $\nabla^2 = \pdiff{}{x} + \pdiff{}{y} + \pdiff{}{z}$
 	\end{tabular}
 \end{center}
 
@@ -715,10 +715,10 @@ $$\left[ \frac{-\hslash^2}{2m} \pdiff{}{x}  + V(x) \right] \psi(x) = E \psi(x), 
 To simplify the equation, we define a new length scale and energy:
 $$a = \sqrt{\frac{\hslash}{m \omega}}, \quad \tilde{x} = \frac{x}{a}, \quad \tilde{E} = \frac{E}{\hslash \omega} \, \Rightarrow \, \frac{1}{2} \left[-\pdiff{}{\tilde{x}} + \tilde{x}^2\right] \varphi(\tilde{x}) = \tilde{E} \varphi(\tilde{x})$$
 Then, the solutions to the equation is:
-$$E_n = \left(n + \frac{1}{2}\right) \hslash \omega, \quad \varphi(\tilde{x}) = c_n H_n(\tilde{x}) e^{-
+$$E_n = \left(n + \frac{1}{2}\right) \hslash \omega, \quad \psi(\tilde{x}) = c_n H_n(\tilde{x}) e^{-
 \tilde{x}/2}, \quad H_n(\tilde{x}) = (-1)^n e^{\tilde{x}^2} \cdot \frac{\partial^n}{\partial \tilde{x}^n} e^{-\tilde{x}^2}$$
 $$H_0(\tilde{x}) = 1, \quad H_1(\tilde{x}) = 2 \tilde{x}, \quad H_2(\tilde{x}) = 4 \tilde{x}^2 - 2, \quad H_3(\tilde{x}) =8 \tilde{x}^3 - 12\tilde{x}$$
-$$\psi_n(x) = \frac{1}{\sqrt[4]{\pi} \sqrt{2^n n! a}} \cdot H_n\left(\frac{x}{a}\right) e^{-\frac{x^2}{2a^2}}$$
+$$\Psi_n(x) = \frac{1}{\sqrt[4]{\pi} \sqrt{2^n n! a}} \cdot H_n\left(\frac{x}{a}\right) e^{-\frac{x^2}{2a^2}}$$
 
 \begin{center}
 	\begin{tikzpicture}
@@ -731,6 +731,62 @@ $$\psi_n(x) = \frac{1}{\sqrt[4]{\pi} \sqrt{2^n n! a}} \cdot H_n\left(\frac{x}{a}
 	\end{axis}
 	\end{tikzpicture}
 \end{center}
+
+\subsection{The coupled quantum well}
+
+\begin{tabular}{cc}
+	\begin{tabular}{c}
+		\begin{tikzpicture}
+			\draw [->] (-2,0) -- (2,0) node[right] {$x$};
+			\draw [->] (0,0) -- (0,2) node[right] {$V(x)$};
+			\draw [thick, cRed, <->] (-1.5,2) -- (-1.5,0) -- (-0.5,0) -- (-0.5,1) -- (0.5,1) -- (0.5,0) -- (1.5,0) -- (1.5,2);
+			\draw (-1,1.5) node{\rom{1}} (0,1.5) node[right] {\rom{2}} (1,1.5) node{\rom{3}};
+			\draw (-1,0.1) node[above] {$-b$} -- (-1,-0.1);
+			\draw ( 1,0.1) node[above] {$b$}  -- ( 1,-0.1);
+			\draw [|-|] (-1.5,-0.4) -- node[pos=0.5, fill=white] {$a$} (-0.5,-0.4);
+			\draw [|-|] ( 1.5,-0.4) -- node[pos=0.5, fill=white] {$a$} ( 0.5,-0.4);
+			\draw       (-0.5,-0.4) -- node[pos=0.5, fill=white] {$\Delta$} ( 0.5,-0.4);
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{tabular}{p{0.5\columnwidth}}
+		This is the simplified potential of an ammonia molecule $\chem{NH_3}$. The wave function outside the well ($\abs{x} > b + \frac{a}{2}$) is zero. There exists a symmetric, as well as an antisymmetric solution. We consider the case: $\bm{E < V_0}$
+	\end{tabular}
+\end{tabular}
+
+%$$\psi_{\rom{1}} = \pm \lambda \cdot \sin\left(k \left(b - \frac{a}{2} + x\right)\right) \qquad \psi_{\rom{3}} = \pm \lambda \cdot \sin\left(k \left(b - \frac{a}{2} + x\right)\right)$$
+$$\psi_{\rom{2}} = \begin{case} \mu \cosh (\delta x)  & \text{symmetric} \\ \mu \sinh (\delta x) & \text{antisymmetric}\end{case} \quad k = \sqrt{\frac{2mE}{\hslash^2}}, \quad \delta = \sqrt{\frac{2 m (V_0 - E)}{\hslash^2}}$$
+
+\begin{tabular}{cc}
+	\begin{tabular}{c}
+		\begin{tikzpicture}
+			\begin{axis}[xlabel=$k a$,ylabel=$\tan(k a)$, xmin=0, xmax=5*pi/2, ymin=-6, ymax=6, width=0.45\columnwidth, height=0.4\columnwidth, axis lines=middle, ticks=none, every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west}, every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south}]
+				\addplot[thick, color=cRed, samples=20, domain=0:(pi/2-0.1)] {tan(x*180/pi)};
+				\addplot[thick, color=cRed, samples=40, domain=(1*pi/2+0.1):(3*pi/2-0.1)] {tan(x*180/pi)};
+				\addplot[thick, color=cRed, samples=40, domain=(3*pi/2+0.1):(5*pi/2-0.1)] {tan(x*180/pi)};
+				\draw [cRed, dashed] (axis cs:pi/2,6) -- (axis cs:pi/2,-6) (axis cs:3*pi/2,6) -- (axis cs:3*pi/2,-6);
+				\addplot[thick, color=cBlue, samples=2, domain=0:5*pi/2] {-0.3*x};
+				\addplot[thick, color=cGreen, samples=2, domain=0:5*pi/2] {-0.4*x};
+			\end{axis}
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{mtabular}{c}
+		$\fmm \color{cGreen} \text{symmetric: }\varepsilon_s = \frac{1 + e^{-\delta \Delta}}{\delta a}$ \\
+		$\fmm \color{cBlue}\text{antisymmetric: } \varepsilon_a = \frac{1 - e^{-\delta \Delta}}{\delta a}$ \\
+		$\fmm \tan(k a) = -k a \varepsilon = -k a \frac{1 \pm e^{-\delta \Delta}}{\delta a}$
+	\end{mtabular}
+\end{tabular}
+
+Now, we can create a superposition of both the symmetric and the antisymmetric case:
+
+$$\psi_{s_\rom{1}} = + \lambda \sin\left( k \left( b - \frac{a}{2} + x \right) \right), \quad \psi_{s_\rom{3}} = + \lambda \sin\left( k \left( b - \frac{a}{2} + x \right) \right)$$
+$$\psi_{a_\rom{1}} = - \lambda \sin\left( k \left( b - \frac{a}{2} + x \right) \right), \quad \psi_{a_\rom{3}} = + \lambda \sin\left( k \left( b - \frac{a}{2} + x \right) \right)$$
+$$\Psi_L = \frac{1}{\sqrt{2}} (\Psi_s - \Psi_a), \qquad \Psi_R = \frac{1}{\sqrt{2}} (\Psi_s + \Psi_a)$$
+$$\Psi_L(x,t) = \frac{1}{\sqrt{2}} e^{-i \omega_s t} \left(\psi_s(x) - e^{-i (\omega_a - \omega_s) t} \psi_a(x)\right)$$
+$$\omega_a = \frac{E_a}{\hslash}, \quad \omega_s = \frac{E_a}{\hslash}, \quad E_a - E_s = \frac{\hslash^2 \pi^2}{2 m \delta a^2} \cdot 8 e^{-\delta \Delta}$$
+
+From the formula describing the wave equation, we can see that at $t_0$, the particle can only be found in region \rom{1}, and after some time $t_{1/2}$, the particle can only be found in region \rom{3}. The particle has tunneled from one side to the other. Now, we can define a period $T$:
+
+$$T = \frac{2 \pi \hslash}{E_a - E_s}$$
 
 \pagebreak
 \onecolumn
