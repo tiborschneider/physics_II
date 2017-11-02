@@ -406,7 +406,7 @@ $$v_{\varphi} \cdot 2 = v_g$$
 In a stationary state, the wave function is a product of a function $\varphi(\bm{x})$ independent of time and a function $\chi(t)$ independent of space. 
 
 $$\Psi_n(\bm{x},t) = \psi_n(\bm{x}) \cdot \chi_n(t) = \psi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t}$$
-$$-\frac{\hslash^3}{2m} \nabla^2 \psi_n(\bm{x}) + V(\bm{x}) \psi_n(\bm{x}) =\psi_n(\bm{x}) \cdot E_n$$
+$$-\frac{\hslash^2}{2m} \nabla^2 \psi_n(\bm{x}) + V(\bm{x}) \psi_n(\bm{x}) =\psi_n(\bm{x}) \cdot E_n$$
 $$\iiint \abs{\Psi}^2 d^3\bm{x} = \iiint \abs{\psi}^2 d^3\bm{x} = 1$$
 $$\Psi(\bm{x},t) = \sum a_n \psi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
 
@@ -688,7 +688,7 @@ $$\infint \psi_1^\ast(x) \cdot \psi_2(x) \cdot dx = \infint \varphi^\ast_1(p) \c
 
 \section{Observable Measurements, Time-dependence}
 
-Doing a measurement in quantum mechanics (observable) can be interpreted as applying an operator $\hat{A}$ on the wave function $\psi(\bm{x},t)$. For example, to compute the expected position $\langle \bm{x} \rangle_\psi$, we apply the operator $\hat{\bm{x}} = \bm{x}$ to average the wave function:
+Doing a measurement in quantum mechanics (observable) can be interpreted as applying an operator $\hat{A}$ on the wave function $\psi(\bm{x},t)$. For example, tu o compute the expected position $\langle \bm{x} \rangle_\psi$, we apply the operator $\hat{\bm{x}} = \bm{x}$ to average the wave function:
 
 $$\langle \bm{x} \rangle_\Psi = \iiint \Psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \Psi(\bm{x},t) d^3 \bm{x} = \iiint \bm{x} \cdot \abs{\Psi(\bm{x},t)}^2 d^3\bm{x}$$
 
@@ -787,6 +787,67 @@ $$\omega_a = \frac{E_a}{\hslash}, \quad \omega_s = \frac{E_a}{\hslash}, \quad E_
 From the formula describing the wave equation, we can see that at $t_0$, the particle can only be found in region \rom{1}, and after some time $t_{1/2}$, the particle can only be found in region \rom{3}. The particle has tunneled from one side to the other. Now, we can define a period $T$:
 
 $$T = \frac{2 \pi \hslash}{E_a - E_s}$$
+
+\section{Schrödinger Equation in 3D}
+
+\begin{tabular}{cc}
+	\begin{tabular}{c}
+		\begin{tikzpicture}[scale=0.8, x={(350:1cm)},y={(40:0.8cm)},z={(90:1cm)}]
+			\draw [->] (0,0,0) -- (3.5,0,0) node[right] {$x_1$};
+			\draw [->] (0,0,0) -- (0,4,0) node[right] {$x_2$};
+			\draw [->] (0,0,0) -- (0,0,2.5) node[right] {$x_3$}; 
+			\draw [thick,cRed] (0,0,0) -- node[black, pos=0.5, below] {$L_1$} (2,0,0) -- node[black, pos=0.5, below right] {$L_2$} (2,1.8,0) -- (0,1.8,0) -- (0,0,0) -- node[black, pos=0.5, left] {$L_3$} (0,0,1) -- (2,0,1) -- (2,1.8,1) -- (0,1.8,1) -- (0,0,1) (2,0,1) -- (2,0,0) (2,1.8,1) -- (2,1.8,0) (0,1.8,1) -- (0,1.8,0);
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{mtabular}{c}
+		$V(x_i) = \begin{case} 0 & \cif 0 < x_i < L_i \\ \infty & \celse	\end{case}$ \\
+		$V(x,y,z) = V(x_1) + V(x_2) + V(x_3)$ \\
+		$\psi(x_1,x_2,x_3) = \psi_1(x_1) \cdot \psi_2(x_2) \cdot \psi_3(x_3)$
+	\end{mtabular}
+\end{tabular}
+
+$$-\frac{\hslash^2}{2m} \left[ \frac{\psi_1''(x_1)}{\psi_1(x_1)} + \frac{\psi_2''(x_2)}{\psi_2(x_2)} + \frac{\psi_3''(x_3)}{\psi_3(x_3)} \right] + V(x_1) + V(x_2) + V(x_3) = E$$
+
+This equation can be separated into three smaller equations for every spacial dimension $x_i$
+
+$$-\frac{\hslash^2}{2m} \pdiff{}{x_i}\psi_i(x_i) +V(x_i) \psi_i(x_i) = E_i \psi_i(x_i) $$
+$$E_i^{(n_i)} = n_i^2 \frac{\hslash^2 \pi^2}{2m L_i^2}, \qquad \psi_i^{(n_1)} = A \cdot \sin \left( \frac{\pi n_i x}{L_i} \right)$$
+
+After normalizing, the wave function can be written as:
+
+$$\psi(x_1,x_2,x_3) = \sqrt{\frac{8}{L_1 L_2 L_3}} \sin \left(\frac{\pi n_1 x_1}{L_1}\right)\sin \left(\frac{\pi n_2 x_2}{L_2}\right) \sin \left(\frac{\pi n_3 x_3}{L_3}\right)$$
+
+\subsection{Schrödinger Equation in spherical coordinates}
+
+\begin{center}
+	\begin{tabular}{cc}
+		\begin{tabular}{c}
+			\begin{tikzpicture}
+				\draw [->] (0,0) -- (-1,-0.8) node[right] {$x$};
+				\draw [->] (0,0) -- (2,0) node[right] {$y$};
+				\draw [->] (0,0) -- (0,2) node[right] {$z$};
+				\draw [fill=black] (30:1.5) circle (0.1cm);
+				\draw (0,0) -- node[pos=0.5, below] {$r$} (30:1.5);
+				\draw [dashed] (30:1.5) -- ++(0,-1.5) -- (0,0);
+				\draw [xscale=0.8, xshift=0.22cm] (30:1) arc (30:103:1) node[pos=0.5, below left] {$\theta$};
+				\draw [yscale=0.5, yshift=-0.4cm] (-30:0.8) arc (-30:-138:0.8) node[pos=0.5, above] {$\varphi$};
+			\end{tikzpicture}
+		\end{tabular} &
+		\begin{mtabular}{c}
+			$x = r  \sin \theta \cos \varphi$ \\
+			$y = r \sin \theta \sin \varphi$ \\
+			$z = r \cos \theta$ \\
+		\end{mtabular}
+	\end{tabular}
+\end{center}
+
+To use the Schrödinger equation, we must define the Laplacian operator $\nabla^2$:
+$$\nabla^2 = \frac{1}{r^2} \pdif{}{r} \left(r^2 \pdif{}{r}\right) + \frac{1}{r^2 \sin\theta} \pdif{}{\theta} \left(\sin\theta \pdif{}{\theta}\right) + \frac{1}{r^2 \sin^2\theta} \pdiff{}{\varphi}$$
+
+\section{Useful formulas}
+
+$$\infint e^{-a x^2} dx = \sqrt{\frac{\pi}{a}} \qquad \int_0^\infty x e^{-a x^2} dc = \frac{1}{2a} \qquad \infint x^2 e^{-a x^2} = \frac{\sqrt{\pi}}{2a^{3/2}}$$
+$$\text{Gaussian:} \quad G = A \cdot e^{\frac{-x^2}{2\sigma^2}}$$
 
 \pagebreak
 \onecolumn
