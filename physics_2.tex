@@ -161,7 +161,8 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 		\end{dtabular} \\
 		\begin{mtabular}{c}
 			$\fmm p_{absorbing} =\frac{h \nu}{c}=m\cdot v$ \\
-			$\fmm p_{reflecting} =2 \cdot \frac{h \nu}{c}$
+			$\fmm p_{reflecting} =2 \cdot \frac{h \nu}{c}$\\
+			$p=\sqrt{2m_ee\Delta V}$
 		\end{mtabular}
 	\end{tabular}
 \end{tabular}
@@ -322,7 +323,7 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 \end{donotbrake}
 
 \begin{donotbrake}
-\subsection{Single slit}
+\subsection{Single slit and uncertainty relation}
 
 \begin{tabular}{cc}
 	\begin{tabular}{c}
@@ -342,8 +343,10 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 		\end{tikzpicture}
 	\end{tabular} &
 	\begin{mtabular}{c}
-		$\fmm I(\theta) = I_0 \frac{\sin^2 \theta}{\theta^2}$ \\
-		$\fmm \sin \theta = \frac{\lambda}{a}$
+	$\fmm I(\theta) = I_0 \frac{\sin^2 \theta}{\theta^2}$ \hspace{2cm}
+		$\fmm \sin \theta = \frac{\lambda}{a}$\\
+		  $\fmm\Delta x\Delta p \geq \hslash$ \hspace{1cm} $\fmm\Delta t\Delta E \geq \hslash$ $(E=\hslash\omega)$
+		
 	\end{mtabular}
 \end{tabular}
 \end{donotbrake}
@@ -376,6 +379,7 @@ Every single particle must satisfy the following equation. The quantized energy 
 \subsection{Wave function}
 $$\psi(\bm{x}, t): \mathbb{R}^4 \rightarrow \mathbb{C} \qquad \iiint \abs{\psi(\bm{x},t)}^2 d^3r = 1 $$
 $$\psi(\bm{x}, t) = a \psi_1(\bm{x},t) + b \psi_2(\bm{x}, t), \qquad \abs{a}^2 + \abs{b}^2 = 1$$
+$$P(x)dx=\abs{\psi (x)}^2dx \qquad \scriptstyle{P_{ab}=\int_{a}^{b}\abs{\psi (x)}^2dx \qquad \langle x\rangle=\int_{-\infty}^{\infty}x\abs{\psi (x)}^2dx}$$
 \end{donotbrake}
 
 \begin{donotbrake}
@@ -390,6 +394,7 @@ $$i \hslash \cdot \frac{\partial \Psi}{\partial t}(\bm{x},t) = - \frac{\hslash^2
 $$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
 $$\Psi = A \cdot e^{i (\bm{k} \bm{x} - \omega t)} \qquad \bm{k} = \Vector[&]{k_x,k_y,k_z}, \quad \bm{x} =\Vector{x,y,z}$$
 $$E = \omega \hslash = \frac{\hslash^2 k^2}{2 m}, \qquad k^2 = \abs{k}^2$$
+$$V(r)=-\frac{e^2}{4\pi \epsilon_0\abs{r}}$$
 
 \end{donotbrake}
 
@@ -907,7 +912,49 @@ $$\infint e^{-a x^2} dx = \sqrt{\frac{\pi}{a}} \qquad \int_0^\infty x e^{-a x^2}
 $$\int x^n e^{cx} = e^{cx} \sum_{i=0}^{n} (-1)^{n-i} \frac{n!}{i! c^{n-i+1}} x^i \qquad \int_0^\infty x^n e^{-cx} = \frac{n!}{c^{n+1}}$$
 $$\text{Gaussian:} \quad G = A \cdot e^{\frac{-x^2}{2\sigma^2}}$$
 
+\subsection{Trigonometry}
+\begin{center}
+	\begin{multicols}{2}
+		$\fmm \sin \beta = \frac ba =\frac{\text{Gegenkathete}}{\text{Hypotenuse}}$\\
+		$\fmm \cos \beta = \frac ca =\frac{\text{Ankathete}}{\text{Hypotenuse}}$\\
+		$\fmm \tan \beta = \frac cb =\frac{\text{Gegenkathete}}{\text{Ankathete}}$\\
+		$\fmm \cot \beta = \frac cb =\frac{\text{Ankathete}}{\text{Gegenkathete}}$\\
+		\end{multicols}
+	\end{center}
+$\cos(a+k\cdot2\pi)=\cos(a) \qquad \sin(a+k\cdot2\pi)=\sin(a) \qquad(k \in \mathbb{Z})$\\
+$\sin(a \pm b)=\sin(a) \cdot \cos(b) \pm \cos(a) \cdot \sin(b)$\\
+$\cos(a \pm b)=\cos(a) \cdot \cos(b) \mp \sin(a) \cdot \sin(b)$\\	
+$\tan(a \pm b)=\dfrac{\tan(a) \pm \tan(b)}{1 \mp \tan(a) \cdot \tan(b)}$\\
+$\sin(2a)=2\sin(a)\cos(a)$\\
+$\cos(2a)=\cos^2(a)-\sin^2(a)=2\cos^2(a)-1=1-2\sin^2(a)$\\
 
+$c^2 = a^2 + b^2 - 2 \cdot a \cdot b \cdot \cos \gamma$\\	
+$\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma} = 2r =
+		\frac{u}{\pi}$
+
+
+
+$\sin(a)\sin(b)=\frac{1}{2}(\cos(a-b)-\cos(a+b))$\\
+$\cos(a)\cos(b)=\frac{1}{2}(\cos(a-b)+\cos(a+b))$\\
+$\sin(a)\cos(b)=\frac{1}{2}(\sin(a-b)+\sin(a+b))$\\
+
+$\cos^2 \left(\frac{a}{2}\right)=\frac{1+\cos(a)}{2} \qquad
+\sin^2 \left(\dfrac{a}{2}\right)=\frac{1-\cos(a)}{2}$\\
+
+$\sin(a)+\sin(b)=2 \cdot \sin \left(\frac{a+b}{2}\right) \cdot
+\cos\left(\frac{a-b}{2}\right)$\\
+$\sin(a)-\sin(b)=2 \cdot \sin \left(\frac{a-b}{2}\right) \cdot
+\cos\left(\frac{a+b}{2}\right)$\\
+$\cos(a)+\cos(b)=2 \cdot \cos \left(\frac{a+b}{2}\right) \cdot
+\cos\left(\frac{a-b}{2}\right)$\\
+$\cos(a)-\cos(b)=-2 \cdot \sin \left(\frac{a+b}{2}\right) \cdot
+\sin\left(\frac{a-b}{2}\right)$\\
+$\tan(a) \pm \tan(b)=\dfrac{\sin(a \pm b)}{\cos(a)\cos(b)}$\\
+
+$\sin(x) = \frac{1}{2j} \left(e^{jx} - e^{-jx}\right) \qquad
+\cos(x) = \frac{1}{2} \left(e^{jx} + e^{-jx}\right)$ \\
+$e^{x+jy} = e^x \cdot e^{jy} = e^x \cdot \left(\cos(y) + j\sin(y)\right)$ \\
+$e^{j\pi} = e^{-j\pi} = -1$ \\
 
 \pagebreak
 \onecolumn
