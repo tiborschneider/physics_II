@@ -34,8 +34,8 @@
 		$m_e = 9.109 \cdot 10^{-31} \si{\kilogram}$ \\
 		$k_B = 1.381 \cdot 10^{-23} \si{\metre \squared \kilogram \per \second \squared \per \kelvin}$ \\
 		$\epsilon_0 = 8.854 \cdot 10^{-12} \si{\farad \per \meter}$ \\
-		$1 \si{\electronvolt} = 1.602 \cdot 10^{-19} \si{\joule}$ \\
-	\end{mtabular}
+		$1 \si{\electronvolt} = 1.602 \cdot 10^{-19} \si{\kilogram \metre \squared \per \second \squared} \si{\joule}$ \\
+	\end{mtabular} 
 \end{tabular}
 \end{donotbrake}
 
@@ -97,13 +97,13 @@
 	$I$ & Power radiated \\
 \end{ddtabular}
 
-\begin{mtabular}{c}
+\begin{tabular}{c}
 	$E_x(x,y,z) = E_{0x} \cos(k_x x) sin(k_y y) sin(k_z z)$ \\
 	$\fmm k_x = n \frac{\pi}{L} \quad \fmm k_y = m \frac{\pi}{L} \quad \fmm k_z = l \frac{\pi}{L} \qquad k = \sqrt{k_x^2 + k_y^2 + k_z^2}$ \\
 	$\fmm N(k) = \frac{1}{3\pi^2} k^3 L^3 \qquad D(k) = \frac{k^2}{\pi^2}$ \\
 	$\fmm u(\omega) =\frac{\omega^2}{\pi^2 c^3} \cdot \frac{\hslash \omega}{\exp\left(\frac{-\hslash \omega}{k T}\right)-1} d\omega \qquad u(\nu) = \frac{8\pi h \nu^3}{c^3 \left( \exp \left(\frac{h \nu}{k T}\right) - 1\right)} d\nu$ \\
 	$\fmm I(\omega) = c \cdot u(\omega)$
-\end{mtabular}
+\end{tabular}
 
 \textbf{Equipartition-Theorem}: Each degree of Freedom has an energy of $kT$
 \end{donotbrake}
@@ -116,7 +116,7 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 \begin{tabular}{cc}
 	
 	\begin{tabular}{c}
-	  \begin{circuitikz} [scale=0.7, transform shape]
+	  \begin{circuitikz} [scale=0.6, transform shape]
 	  	\draw [thick] (1,2) to [short] (5,2);
 	  	\draw [thick] (1,0) to [short] (5,0);
 	  	\draw (1,0) to [short, o-] (0,0) to [R=$R$] (0,2) to [short, -o ](1,2);
@@ -124,7 +124,7 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 	  	\draw (3,1.2) node {$Z_c = R$};
 	  	\draw [latex-latex] (1,0.3) -- (5,0.3) node [pos=0.5, above] {$L$};
   	\end{circuitikz} \\ $\qquad$
-	  \begin{circuitikz} [scale=0.7, transform shape]
+	  \begin{circuitikz} [scale=0.6, transform shape]
 	  	\draw (0,0) to [R=$R'$] (0,2) to [sV_=$V$] (4,2) to [R=$R$] (4,0) to [short] (0,0);
 	  	\draw [dashed] (-0.8,-0.6) rectangle (2.6,2.6);
 	  \end{circuitikz}
@@ -135,10 +135,10 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 			$\langle V^2\rangle$ & Noise Voltage \\
 			$\Delta \nu$ & Bandwidth \\
 		\end{dtabular} \\
-		\begin{mtabular}{c}
+		\begin{tabular}{c}
 			$E = E_0 \cdot \sin(k_x \cdot x)$ \\
 			$\langle V^2 \rangle = 4 R \cdot k_BT \cdot \Delta \nu$
-		\end{mtabular}
+		\end{tabular}
 	\end{tabular}
 \end{tabular}
 \end{donotbrake}
@@ -148,7 +148,7 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 
 \begin{tabular}{cc}
 	\begin{tabular}{c}
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.8, transform shape]
 			\draw (2,0) rectangle (2.2,3);
 			\draw [->, photon] (0,0.5) -- (2,1.5);
 			\draw [->, photon] (1.9,1.6) -- (0,2.5);
@@ -159,11 +159,11 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 		\begin{dtabular}
 			$p  \si{\kilo \gram \metre \per \second}$ &momentum \\
 		\end{dtabular} \\
-		\begin{mtabular}{c}
+		\begin{tabular}{c}
 			$\fmm p_{absorbing} =\frac{h \nu}{c}=m\cdot v$ \\
 			$\fmm p_{reflecting} =2 \cdot \frac{h \nu}{c}$\\
 			$p=\sqrt{2m_ee\Delta V}$
-		\end{mtabular}
+		\end{tabular}
 	\end{tabular}
 \end{tabular}
 \end{donotbrake}
@@ -206,7 +206,6 @@ $$\fmm B_{21} = B_{12} = B \qquad A_{21} = \frac{8\pi h \nu^3}{c^3}$$
 
 \end{donotbrake}
 
-\begin{donotbrake}
 \subsection{Laser-optical amplification}
 
 \begin{center}
@@ -248,9 +247,7 @@ $$n_2 = \frac{R}{A_{21}} \quad \text{whereas} \quad n_1 \approx 0 \quad \text{be
 We have rherefore a population inversion between the two states. 
 The likelihood of a stimulated emission process is larger than the one of absorbtion. 
 If we enclose the system in an optical cavity, we can achieve self-sustained oscillation at the frequency $\nu$.
-
-\end{donotbrake}
-
+b
 \section{Wave mechanics}
 
 \begin{center}
@@ -262,7 +259,6 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 	\end{tabular}
 \end{center}
 
-\begin{donotbrake}
 \subsection{Compton Scattering}
 
 \begin{tabular}{cc}
@@ -284,45 +280,40 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 		$\fmm \lambda_2 - \lambda_1 = \frac{h}{m_e c} (1 - \cos \theta)$;
 	\end{mtabular}
 \end{tabular}
-\end{donotbrake}
 
+\subsection{Double Slit and Bragg Diffraction}
 
-\begin{donotbrake}
-	\subsection{Double Slit and Bragg Diffraction}
+\begin{tabular}{ccc}
+	\begin{tabular}{c}
+		\begin{tikzpicture} [scale=0.8, transform shape]
+		\draw [fill=black!10] (-0.05,0.05) rectangle (0.05,0.85) (-0.05,0.95) rectangle (0.05,1.45) (-0.05,1.55) rectangle (0.05,2.35);
+		\draw [|-|] (-0.2,1.5) -- (-0.2,0.9) node [pos=0.5,left] {\small $a$};
+		\draw [dashed] (0,1.2) -- (2,1.2);
+		\draw (0,1.2) -- (2,0.6);
+		\draw (1.5,1.2) arc (0:-17:1.5);
+		\draw (1.2,1) node {\small $\theta$}; 
+		\end{tikzpicture}
+	\end{tabular} &
 	
-	\begin{tabular}{ccc}
-		\begin{tabular}{c}
-			\begin{tikzpicture} [scale=0.8, transform shape]
-			\draw [fill=black!10] (-0.05,0.05) rectangle (0.05,0.85) (-0.05,0.95) rectangle (0.05,1.45) (-0.05,1.55) rectangle (0.05,2.35);
-			\draw [|-|] (-0.2,1.5) -- (-0.2,0.9) node [pos=0.5,left] {\small $a$};
-			\draw [dashed] (0,1.2) -- (2,1.2);
-			\draw (0,1.2) -- (2,0.6);
-			\draw (1.5,1.2) arc (0:-17:1.5);
-			\draw (1.2,1) node {\small $\theta$}; 
-			\end{tikzpicture}
-		\end{tabular} &
-		
-		\begin{tabular}{c}
-			\begin{tikzpicture} [scale=0.8, transform shape]
-			\foreach \y in {0,0.4,0.8,1.2,1.6,2.0} {
-				\draw [fill=black!10] (-0.05,\y+0.05) rectangle (0.05,\y+0.35);
-			}
-			\draw [|-|] (0.2,0.8) -- (0.2,0.4) node[pos=0.5, right] {\small $a$};
-			\draw [dashed] (0,1.6) -- (2,1.6);
-			\draw (0,1.6) -- (2,1);
-			\draw (1.5,1.6) arc (0:-17:1.5);
-			\draw (1.2,1.4) node {\small $\theta$}; 
-			\end{tikzpicture}
-		\end{tabular} &
-		\begin{mtabular}{cl}
-			Constructive & $\fmm \sin \theta = \frac{n \lambda}{a}$ \\
-			Destructive &$\fmm \sin \theta = \frac{(n +\frac{1}{2}) \lambda}{a} $ \\
-			 & $n \in \mathbb{Z}$
-		\end{mtabular}
-	\end{tabular}
-\end{donotbrake}
+	\begin{tabular}{c}
+		\begin{tikzpicture} [scale=0.8, transform shape]
+		\foreach \y in {0,0.4,0.8,1.2,1.6,2.0} {
+			\draw [fill=black!10] (-0.05,\y+0.05) rectangle (0.05,\y+0.35);
+		}
+		\draw [|-|] (0.2,0.8) -- (0.2,0.4) node[pos=0.5, right] {\small $a$};
+		\draw [dashed] (0,1.6) -- (2,1.6);
+		\draw (0,1.6) -- (2,1);
+		\draw (1.5,1.6) arc (0:-17:1.5);
+		\draw (1.2,1.4) node {\small $\theta$}; 
+		\end{tikzpicture}
+	\end{tabular} &
+	\begin{mtabular}{cl}
+		Constructive & $\fmm \sin \theta = \frac{n \lambda}{a}$ \\
+		Destructive &$\fmm \sin \theta = \frac{(n +\frac{1}{2}) \lambda}{a} $ \\
+	 & $n \in \mathbb{Z}$
+	\end{mtabular}
+\end{tabular}
 
-\begin{donotbrake}
 \subsection{Single slit and uncertainty relation}
 
 \begin{tabular}{cc}
@@ -349,7 +340,6 @@ If we enclose the system in an optical cavity, we can achieve self-sustained osc
 		
 	\end{mtabular}
 \end{tabular}
-\end{donotbrake}
 
 \subsection{Bohr-Sommerfeld quantisation}
 
@@ -375,40 +365,25 @@ Every single particle must satisfy the following equation. The quantized energy 
 
 \section{Quantum Mechanics}
 
-\begin{donotbrake}
 \subsection{Wave function}
 $$\psi(\bm{x}, t): \mathbb{R}^4 \rightarrow \mathbb{C} \qquad \iiint \abs{\psi(\bm{x},t)}^2 d^3r = 1 $$
 $$\psi(\bm{x}, t) = a \psi_1(\bm{x},t) + b \psi_2(\bm{x}, t), \qquad \abs{a}^2 + \abs{b}^2 = 1$$
 $$P(x)dx=\abs{\psi (x)}^2dx \qquad \scriptstyle{P_{ab}=\int_{a}^{b}\abs{\psi (x)}^2dx \qquad \langle x\rangle=\int_{-\infty}^{\infty}x\abs{\psi (x)}^2dx}$$
-\end{donotbrake}
 
-\begin{donotbrake}
 \subsection{The Schrödinger equation}
-
-\begin{ddtabular}
-	$V(x,t)$ & potential &
-	$m$ & mass \\
-\end{ddtabular}
-
+%\begin{ddtabular}
+%	$V(x,t)$ & potential &
+%	$m$ & mass \\
+%\end{ddtabular}
 $$i \hslash \cdot \frac{\partial \Psi}{\partial t}(\bm{x},t) = - \frac{\hslash^2}{2m} \cdot \nabla^2 \Psi(\bm{x},t) + V(\bm{x}, t) \Psi(\bm{x},t)$$
-$$\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$$
-$$\Psi = A \cdot e^{i (\bm{k} \bm{x} - \omega t)} \qquad \bm{k} = \Vector[&]{k_x,k_y,k_z}, \quad \bm{x} =\Vector{x,y,z}$$
+$$\Psi = A \cdot e^{i (\bm{k} \bm{x} - \omega t)} \qquad \bm{k} = \Vector[&]{k_x,k_y,k_z}, \quad \bm{x} =\Vector[&]{x,y,z}^T$$
 $$E = \omega \hslash = \frac{\hslash^2 k^2}{2 m}, \qquad k^2 = \abs{k}^2$$
-$$V(r)=-\frac{e^2}{4\pi \epsilon_0\abs{r}}$$
 
-\end{donotbrake}
-
-\begin{donotbrake}
 \subsubsection{Phase and Group Velocity}
-
 The \cdef{phase velocity $v_{\varphi}$} describes how fast the phase of the wave moves forward. 
 The \cdef{group velocity $v_g$} describes how fast the energy is moving forward. 
-$$v_{\varphi} = \frac{\omega}{k} \qquad v_g =\frac{\partial \omega}{\partial k}$$
-For a particle wave, the phase velocity $v_{\varphi}$ is half the group velocity $v_g$
-$$v_{\varphi} \cdot 2 = v_g$$
-\end{donotbrake}
+$$v_{\varphi} = \frac{\omega}{k} \qquad v_g =\frac{\partial \omega}{\partial k} \qquad \text{Particle wave: } \ v_\varphi \cdot 2 = v_g$$
 
-\begin{donotbrake}
 \subsubsection{Stationary (Time independent) States}
 
 In a stationary state, the wave function is a product of a function $\varphi(\bm{x})$ independent of time and a function $\chi(t)$ independent of space. 
@@ -419,7 +394,6 @@ $$\iiint \abs{\Psi}^2 d^3\bm{x} = \iiint \abs{\psi}^2 d^3\bm{x} = 1$$
 $$\Psi(\bm{x},t) = \sum a_n \psi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
 
 Requirements: The wave function must be continous, as well as it's derivative 
-\end{donotbrake}
 
 \subsubsection{Example: 1D infinite potential well}
 
@@ -465,38 +439,28 @@ Requirements: The wave function must be continous, as well as it's derivative
 	\end{tabular}
 \end{tabular}
 
-\begin{donotbrake}
 \textbf{Inside the well: }The general solution to the rearranged Schrödinger's is:
 
 $$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2}\psi_2(x) = (E-V_0) \psi_2(x)$$
 $$\psi_2(x) = A_2 e^{i k x} + A'_2 e^{-i k x} \qquad E = \frac{k^2 \hslash^2}{2m} \quad k = \sqrt{\frac{2 m (E-V_0)}{\hslash^2}}$$
 
-\end{donotbrake}
-
-\begin{donotbrake}
-
 \textbf{Outside the well: }There are two cases, which can apply:
-
-$$-\frac{\hslash}{2m} \frac{\partial^2}{\partial x^2}\psi_{1}(x) = E \psi_{1}(x)$$
 
 \begin{enumerate}
 	\item $E > 0$:\textbf{Unbound state}
-	$$ \psi_1 =  A_1 e^{i k x} + A'_1 e^{-i k x} \qquad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
+	$$-\frac{\hslash}{2m} \frac{\partial^2}{\partial x^2}\psi_{1}(x) = E \psi_{1}(x) \qquad \psi_1 =  A_1 e^{i k x} + A'_1 e^{-i k x} \qquad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
 	The unbound state does not make sense to be investigated, because the particle is free to be anywhere. In the following, only the unbound state is considered.
 	\item $E < 0$: \textbf{Bound state}
-	$$\psi_1 = B_1 e^{\delta x} + B'_1 e^{-\delta x} \qquad \delta = \sqrt{-\frac{2 m E}{\hslash^2}}$$
+	$$-\frac{\hslash}{2m} \frac{\partial^2}{\partial x^2}\psi_{1}(x) = E \psi_{1}(x) \qquad \psi_1 = B_1 e^{\delta x} + B'_1 e^{-\delta x} \qquad \delta = \sqrt{-\frac{2 m E}{\hslash^2}}$$
 	
 	We see that as $x \rightarrow -\infty$, the Term $B'_1$, as well as $B_3$ approaches $\infty$. Since the wave function cannot approach $\infty$, $B'_1 = B_3 = 0$ is a condition.
-	
-	$$\psi = \begin{case}
-		\psi_1 = B_1 e^{\delta x} & x < -L \\
-		\psi_2 = A_2 e^{i k x} + A'_2 e^{-i k x} & -L < x < L \\
-		\psi_3 = B'_3 e^{-\delta x} & L < x
-		
-	\end{case}$$
+	%$$\psi = \begin{case}
+	%	\psi_1 = B_1 e^{\delta x} & x < -L \\
+	%	\psi_2 = A_2 e^{i k x} + A'_2 e^{-i k x} & -L < x < L \\
+	%	\psi_3 = B'_3 e^{-\delta x} & L < x	
+	%\end{case}$$
 	  
 \end{enumerate}
-\end{donotbrake}
 
 \begin{donotbrake}
 	
@@ -574,13 +538,11 @@ In \textbf{Region 1}, the general solution to the Schrödinger equation is:
 $$\frac{-\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \psi_1(x) = E \psi_1(x), \quad \psi_1(x) = A e^{i k_1 x} + B e^{-i k_1 x}, \quad k = \sqrt{\frac{2 m E}{\hslash^2}}$$
 
 In \textbf{Region 2}, there are two cases, which can apply:
-$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \psi_2 = (E - V_0) \psi_2(x)$$
-
 \begin{enumerate}
 	\item $\mathbf{E > V_0}$: \textbf{Transmission}
-	$$\psi_2 = C e^{i k_2 x}, \qquad k_2 = \sqrt{\frac{2 m (E - V_0)}{\hslash^2}}$$
+	$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \psi_2 = (E - V_0) \psi_2(x) \qquad \psi_2 = C e^{i k_2 x}, \qquad k_2 = \sqrt{\frac{2 m (E - V_0)}{\hslash^2}}$$
 	\item $\mathbf{E < V_0}$: \textbf{Complete reflection}
-	$$\psi_2 = C e^{\delta_2 x}, \qquad \delta_2 = \sqrt{\frac{2 m (V_0 - 2)}{\hslash^2}}$$
+	$$-\frac{\hslash^2}{2m} \frac{\partial^2}{\partial x^2} \psi_2 = (E - V_0) \psi_2(x) \qquad \psi_2 = C e^{\delta_2 x}, \qquad \delta_2 = \sqrt{\frac{2 m (V_0 - 2)}{\hslash^2}}$$
 \end{enumerate}
 
 Applying the \textbf{initial conditions}, which require the wave function and it's derivative to be continuous at $x = 0$, we get the following expression for $A$, $B$, $C$:
@@ -681,7 +643,7 @@ If $\mathbf{E > V_0}$, the transmission coefficient has a maximum. If $k_2 \ell 
 
 \subsection{Inner Product}
 
-The inner product $\braket{\psi_1 | \psi_2}$ is defined like the scalar product for vectors. If the inner product of two wave functions is 0, those two wave functions are \textbf{orthogonal}.
+The inner product $\braket{\psi_1 | \psi_2}$ is defined like the scalar product for vectors. If the inner product $\braket{\psi_1 | \psi_2} = 0$ , $\psi_1$, $\psi_2$ are \textbf{orthogonal}.
 
 $$\braket{\psi_1 | \psi_2} = \infint \psi_1^\ast(\bm{x},t) \psi_2(\bm{x},t) d^3 \bm{x}$$
 $$\braket{\psi | \psi} = \infint \psi^\ast(\bm{x},t) \psi(\bm{x},t) d^3 \bm{x} = \infint \abs{\psi(\bm{x},t)}^2 d^3 \bm{x} = 1$$
@@ -697,7 +659,6 @@ $$\infint \psi_1^\ast(x) \cdot \psi_2(x) \cdot dx = \infint \varphi^\ast_1(p) \c
 \section{Observable Measurements, Time-dependence}
 
 Doing a measurement in quantum mechanics (observable) can be interpreted as applying an operator $\hat{A}$ on the wave function $\psi(\bm{x},t)$. For example, tu o compute the expected position $\langle \bm{x} \rangle_\psi$, we apply the operator $\hat{\bm{x}} = \bm{x}$ to average the wave function:
-
 $$\langle \bm{x} \rangle_\Psi = \iiint \Psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \Psi(\bm{x},t) d^3 \bm{x} = \iiint \bm{x} \cdot \abs{\Psi(\bm{x},t)}^2 d^3\bm{x}$$
 
 \begin{center}
@@ -709,21 +670,27 @@ $$\langle \bm{x} \rangle_\Psi = \iiint \Psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \P
 	\end{tabular}
 \end{center}
 
-\textbf{Canonical commutation relation}: $[\hat{A},\hat{B}] = \hat{A} \hat{B} - \hat{B} \hat{A}$
+\subsection{Canonical commutation relation}
+
+The commutators is a way of describing the effect of the order, in which multiple operators are applied.
+$$\left[\hat{A},\hat{B}\right] = \hat{A} \hat{B} - \hat{B} \hat{A}, \quad \left[\hat A,\hat B\right] = -\left[\hat B,\hat A\right], \quad \left[\hat A,\hat A\right] = 0$$
+$$\left[\hat A,(\hat B+\hat C)\right] = \left[\hat A,\hat B\right] + \left[\hat A,\hat C\right]$$
+$$\left[\hat p_x,\hat p_y\right] = 0, \ \left[\hat x,\hat p_x\right] = i\hslash, \ \left[\hat z,\hat p_x\right] = \left[\hat z,\hat p_y\right] = 0$$
 
 \subsection{Eigenstates and Eigenvalues}
 
 An Observable has an Operator $\hat{A}$. a state $u_n(x)$ is called an eigenstate the operator applied on the wave function acts like a scalar multiplication to it. Then, the measurement of the general state $\psi(x)$ is a superposition of all the eigenstates.
+$$\hat{A} u_n(x) = a_n u_n(x), \quad \infint u^\ast_n(x) \hat{A} u_n(x) dx = a_n \quad \hat{A} \psi(x) = \sum_n c_n u_n(x)$$
 
-$$\hat{A} u_n(x) = a_n u_n(x), \quad \infint u^\ast_n(x) \hat{A} u_n(x) dx = a_n$$
-$$\hat{A} \psi(x) = \sum_n c_n u_n(x)$$
 
 \subsection{Harmonic Oscillator}
 
 A Quantum mechanical harmonic oscillator can be interpreted as the solution to the Schrödinger equation:
 $$\left[ \frac{-\hslash^2}{2m} \pdiff{}{x}  + V(x) \right] \psi(x) = E \psi(x), \quad V(x) = \frac{1}{2} k x^2 = \frac{m \omega^2}{2} x^2$$
+
 To simplify the equation, we define a new length scale and energy:
 $$a = \sqrt{\frac{\hslash}{m \omega}}, \quad \tilde{x} = \frac{x}{a}, \quad \tilde{E} = \frac{E}{\hslash \omega} \, \Rightarrow \, \frac{1}{2} \left[-\pdiff{}{\tilde{x}} + \tilde{x}^2\right] \varphi(\tilde{x}) = \tilde{E} \varphi(\tilde{x})$$
+
 Then, the solutions to the equation is:
 $$E_n = \left(n + \frac{1}{2}\right) \hslash \omega, \quad \psi(\tilde{x}) = c_n H_n(\tilde{x}) e^{-
 \tilde{x}/2}, \quad H_n(\tilde{x}) = (-1)^n e^{\tilde{x}^2} \cdot \frac{\partial^n}{\partial \tilde{x}^n} e^{-\tilde{x}^2}$$
@@ -794,9 +761,7 @@ $$\Psi_L = \frac{1}{\sqrt{2}} (\Psi_s - \Psi_a), \qquad \Psi_R = \frac{1}{\sqrt{
 $$\Psi_L(x,t) = \frac{1}{\sqrt{2}} e^{-i \omega_s t} \left(\psi_s(x) - e^{-i (\omega_a - \omega_s) t} \psi_a(x)\right)$$
 $$\omega_a = \frac{E_a}{\hslash}, \quad \omega_s = \frac{E_a}{\hslash}, \quad E_a - E_s = \frac{\hslash^2 \pi^2}{2 m \delta a^2} \cdot 8 e^{-\delta \Delta}$$
 
-From the formula describing the wave equation, we can see that at $t_0$, the particle can only be found in region \rom{1}, and after some time $t_{1/2}$, the particle can only be found in region \rom{3}. The particle has tunneled from one side to the other. Now, we can define a period $T$:
-
-$$T = \frac{2 \pi \hslash}{E_a - E_s}$$
+From the formula describing the wave equation, we can see that at $t_0$, the particle can only be found in region \rom{1}, and after some time $t_{1/2}$, the particle can only be found in region \rom{3}. The particle has tunneled from one side to the other. Now, we can define a period $T = \frac{2 \pi \hslash}{E_a - E_s}$
 
 \section{Schrödinger Equation in 3D}
 
@@ -906,6 +871,83 @@ Chemists give the different $\ell$'s different names.
 	\item $\ell = 2$: the orbital is called an d-state.
 \end{itemize}
 
+\section{Angular Momentum and Spin}
+
+$$ \begin{array}{lll}\hat L_x = \hat y \hat p_z - \hat z \hat p_y & \hat L_y = \hat z \hat p_x - \hat x \hat p_z & \hat L_z = \hat x \hat p_y - \hat y \hat p_x \\ \left[\hat L_x,\hat L_y\right] = i \hslash \hat L_z & \left[\hat L_y,\hat L_z\right] = i \hslash \hat L_x & \left[\hat L_z,\hat L_x\right] = i \hslash \hat L_y \\ \end{array} \hat{\bm{L}} = \det \left| \begin{array}{ccc} \bm{e_x} & \bm{e_y} & \bm{e_z} \\ \hat x & \hat y & \hat z \\ \hat p_x & \hat p_y & \hat p_z\end{array} \right| $$
+
+\small {
+$$\hat L_x = i \hslash \left( \sin \varphi \pdif{}{\theta} + \frac{\cos \theta \cos \varphi}{\sin \theta} \pdif{}{\varphi}  \right), \ \hat L_y = -i \hslash \left( \cos \varphi \pdif{}{\theta} - \frac{\cos \theta \sin \varphi}{\sin \theta} \pdif{}{\varphi} \right)$$
+$$\hat L_z = -i \hslash \pdif{}{\varphi}, \quad \hat L^2 = -\hslash^2 \left[\frac{1}{\sin \theta} \pdif{}{\theta} \left( \sin \theta \pdif{}{\theta} \right) + \frac{1}{\sin^2 \theta} \pdiff{}{\varphi} \right]$$
+}
+
+Angular momentum operators do not commute. In order to get commutable operators, we introduce $\hat L^2 = \hat L_x^2 + \hat L_y^2 + \hat L_z^2$
+
+$$\left[\hat L^2,\hat L_x\right] = 0, \qquad \left[\hat L^2,\hat L_y\right] = 0, \qquad \left[\hat L^2,\hat L_z\right] = 0$$
+
+$$\hat L^2 Y_\ell^m (\theta,\varphi) = h^2 \ell (\ell + 1) Y_\ell^m(\theta,\varphi), \qquad \hat L_z Y_\ell^m(\theta,\varphi) = \hslash m Y_\ell^m(\theta,\varphi)$$
+
+\subsection{Ladder Operator}
+
+If a ladder operators $\hat L_\pm = \hat L_x \pm i \hat L_y$ are used in the following way: Suppose, we have a wave function $\psi$, which is simultaneously an eigenfunction of $\hat L^2$ and $\hat L_z$. Then, $\hat L_\pm \psi$ is also an eigenfunction of $\hat L^2$ and $\hat L_z$ with the following eigenvalues:
+
+$$\hat L^2 \psi = \lambda \psi, \quad \hat L_z \psi = \mu \psi$$
+$$\hat L^2 (\hat L_\pm \psi) = \lambda (\hat L_\pm \psi), \quad \hat L_z (\hat L_\pm \psi) = (\mu \pm \hslash) (\hat L_\pm \psi)$$ 
+
+\subsection{Spin}
+
+Idea: $\ell = \frac12 \ \rightarrow \ m = \pm \frac12$. Instead of using $\ell$, we use $s$ to describe the spin. The operators $\hat L_i$ are now called $\hat S_i$. We define the spin as $\ket{s,m_s}$:
+$$\chi_+ = \Ket{\frac12,\frac12} = \ket{\uparrow}, \quad \chi_- = \Ket{\frac12,-\frac12} = \ket{\downarrow}, \quad \chi = a \chi_+ + \beta \chi_- = \begin{pmatrix}a\\b\end{pmatrix}, \ \abs{a}^2 + \abs{b}^2 = 1$$
+
+Since we have now only two eigenstates $\spinup$ and $\spindown$, we can write:
+$$\hat S^2 = \frac{3}{4} \hslash^2 \begin{pmatrix} 1&0\\0&1 \end{pmatrix} \quad \hat S_x = \frac{\hslash}{2} \begin{pmatrix} 0&1\\1&0 \end{pmatrix} \quad \hat S_y = \frac{\hslash}{2} \begin{pmatrix} 0&-i\\i&0 \end{pmatrix} \quad \hat S_z = \frac{\hslash}{2} \begin{pmatrix} 1&0\\0&-1 \end{pmatrix}$$
+
+Now, we define the ladder operators in the same way as for the angular momentum:
+$$\hat S_+ = \begin{pmatrix} 0&\hslash\\0&0 \end{pmatrix} \quad \hat S_- = \begin{pmatrix} 0&0\\\hslash&0 \end{pmatrix} \quad \hat S_+ \spinup = \hat S_- \spindown = 0, \ \hat S_+ \spindown = \hslash \spinup, \ \hat S_- \spinup = \hslash \spindown$$
+
+We can write states states in dirac notation as: $\ket{\ell,m}$. For spins, we get:
+$$\ket{1,1} = \spinupup, \ \ket{1,-1} = \spindowndown, \ \ket{1,0} = \frac{1}{\sqrt2}(\spinupdown + \spindownup), \ \ket{0,0} = \frac{1}{\sqrt2} (\spinupdown - \spindownup) $$
+
+\subsection{Identical Particles}
+When we have two particles with wave function $\varphi_a(\vec x_1)$ and $\varphi_b(\vec x_2)$, we can combine them in two different ways:
+\begin{itemize}
+	\item \textbf{Fermion}: $\psi_- = \frac{1}{\sqrt2} \left( \varphi_a (\vec x_1) \varphi_b(\vec x_2) - \varphi_b(\vec x_1) \varphi_a (\vec x_2) \right)$: symmetric (electron)
+	\item \textbf{Boson}: $\psi_+ = \frac{1}{\sqrt2} \left( \varphi_a (\vec x_1) \varphi_b(\vec x_2) + \varphi_b(\vec x_1) \varphi_a (\vec x_2) \right)$: antisymmetric (photon)
+\end{itemize}
+Pauli exclusion principle: \textbf{Two fermions cannot occupy the same identical state}
+
+\subsubsection{Exchange Interactions}
+
+We have two particles, which have normalized and orthogonal wave functions. We have three different interactions:
+\begin{enumerate}
+	\item The particles are \textbf{distinguishable}: $\psi = \psi_a(x_1) \psi_b(x_2)$
+	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} - 2 \braket{x}_{\psi_a} \braket{x}_{\psi_b}$$
+	\item \textbf{Symmetric} wave function: $\psi_+ = \frac{1}{\sqrt2} (\ket{\psi_a} \ket{\psi_b} + \ket{\psi_b} \ket{\psi_a})$
+	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} - 2 \abs{\braket{\psi_a|x|\psi_b}}^2$$
+	\item \textbf{Antisymmetric} wave function: $\psi_- = \frac{1}{\sqrt2} (\ket{\psi_a} \ket{\psi_b} - \ket{\psi_b} \ket{\psi_a})$
+	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} + 2 \abs{\braket{\psi_a|x|\psi_b}}^2$$
+\end{enumerate}
+
+This means, that the particles are closer together in the antisymmetric case than in the symmetric case. But this does not account for the spin. Because of Pauli's exclusion principle, the electrons must be in a different state, therefore they have different spin. The total angular momentum can be either $\ket{0,0}$ or $\ket {1,0}$. Those are both antisymmetric wave functions. Therefore, the radial part must be symmetric, in which case, both electrons are attracted to eachother.
+
+\subsection{Many Electrons: Atomic Shells}
+
+Electrons with $n = 2$ are further away from the nucleus than electrons with $n = 1$. Therefore, those further away see a different (smaller) effective charge than those in the inner shell.
+
+To write the wave function of an electron, we use the notation indexed by: $\ket{n, \ell, m}$.
+\begin{center}
+	\begin{stabular}{cccc}
+		shell $n$ & subshell $\ell$ & max $e^-$ in subshell & max $e^-$ in shell \\ \toprule
+		K & 1s & 2 & 2 \\ \midrule
+		L & 2s & 2 & $2+6=8$ \\ 
+		& 2p & 6 & \\ \midrule
+		M & 3s & 2 & $2+6+10=10$ \\
+		& 3p & 6 & \\
+		& 3d & 10 & \\
+	\end{stabular}
+\end{center}
+
+Here, the number of degeneracies per shell is displayed. Remember, we have $n \geq 1$, $0 \leq \ell \leq n$, $-\ell \leq m \leq \ell$, and for every different state, the electron can have either spin up or spin down. So, the number of electrons in a sub shell is the number of degeneracies. 
+
 \section{Useful formulas}
 
 $$\infint e^{-a x^2} dx = \sqrt{\frac{\pi}{a}} \qquad \int_0^\infty x e^{-a x^2} dc = \frac{1}{2a} \qquad \infint x^2 e^{-a x^2} = \frac{\sqrt{\pi}}{2a^{3/2}}$$
@@ -913,18 +955,26 @@ $$\int x^n e^{cx} = e^{cx} \sum_{i=0}^{n} (-1)^{n-i} \frac{n!}{i! c^{n-i+1}} x^i
 $$\text{Gaussian:} \quad G = A \cdot e^{\frac{-x^2}{2\sigma^2}}$$
 
 \subsection{Trigonometry}
-{\small
-\begin{tabular}{cc}
-	$\sin(a \pm b)=\sin(a) \cos(b) \pm \cos(a) \sin(b)$ &
-	$\cos(a \pm b)=\cos(a) \cos(b) \mp \sin(a) \sin(b)$ \\
-	$\sin(a)\pm \sin(b)=2 \sin \left(\frac{a \pm b}{2}\right) \cos\left(\frac{a \mp b}{2}\right)$ &
-	$\cos(a)+\cos(b)=2 \cos \left(\frac{a+b}{2}\right) \cos\left(\frac{a-b}{2}\right)$ \\
-	$\cos(a)-\cos(b)=-2 \sin \left(\frac{a+b}{2}\right) \sin\left(\frac{a-b}{2}\right)$ &
-	$\sin(a)\sin(b)=\frac{1}{2}(\cos(a-b)-\cos(a+b))$ \\
-	$\cos(a)\cos(b)=\frac{1}{2}(\cos(a-b)+\cos(a+b))$ &
-	$\sin(a)\cos(b)=\frac{1}{2}(\sin(a-b)+\sin(a+b))$ \\
-	$c^2 = a^2 + b^2 - 2 a b \cos \gamma$ &
-	$\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma} = 2r = \frac{u}{\pi}$ \\
+{\footnotesize
+\begin{tabular}{r<{\hspace{-8pt}}c<{\hspace{-8pt}}lr<{\hspace{-8pt}}c<{\hspace{-8pt}}l}
+	$\sin(2\alpha) $&$=$&$ 2 \sin \alpha \cos \alpha$ &
+	$\cos(2\alpha) $&$=$&$ \cos^2 \alpha - \sin^2 \alpha$ \\
+	$\sin(\alpha \pm \beta)$&$=$&$\sin(\alpha) \cos(b) \pm \cos(\alpha) \sin(b)$ &
+	$\cos(\alpha \pm \beta)$&$=$&$\cos(\alpha) \cos(b) \mp \sin(\alpha) \sin(b)$ \\
+	$\sin(\alpha)\pm \sin(\beta)$&$=$&$2 \sin \frac{\alpha \pm \beta}{2} \cos \frac{\alpha \mp \beta}{2}$ &
+	$\cos(\alpha)+\cos(\beta)$&$=$&$2 \cos \frac{\alpha+\beta}{2} \cos\frac{\alpha-\beta}{2}$ \\
+	$\cos(\alpha)-\cos(\beta)$&$=$&$-2 \sin \frac{\alpha+\beta}{2} \sin\frac{\alpha-\beta}{2}$ &
+	$\sin(\alpha)\sin(\beta)$&$=$&$\frac{1}{2}(\cos(\alpha-\beta)-\cos(\alpha+\beta))$ \\
+	$\cos(\alpha)\cos(\beta)$&$=$&$\frac{1}{2}(\cos(\alpha-\beta)+\cos(\alpha+\beta))$ &
+	$\sin(\alpha)\cos(\beta)$&$=$&$\frac{1}{2}(\sin(\alpha-\beta)+\sin(\alpha+\beta))$ \\
+	$\sin^2 \alpha $&$=$&$ \frac12 \left(1-\cos 2\alpha\right)$ &
+	$\cos^2 \alpha $&$=$&$ \frac12 \left(1+\cos 2\alpha\right)$ \\
+	$\sin^3 \alpha $&$=$&$ \frac14 \left(3\sin \alpha - \sin 3\alpha\right)$ &
+	$\cos^3 \alpha $&$=$&$ \frac14 \left(3\cos \alpha + \cos 3\alpha\right)$ \\
+	$\frac{\sin 2\alpha}{\sin \alpha} $&$=$&$ 2 \cos \alpha$ &
+	$\sin \alpha \cos \alpha $&$=$&$ \frac12 \sin 2\alpha$ \\
+	$c^2 $&$=$&$ a^2 + b^2 - 2 a b \cos \gamma$ &
+	$\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} $&$=$&$ \frac{c}{\sin \gamma} = 2r = \frac{u}{\pi}$ \\
 \end{tabular}
 }
 

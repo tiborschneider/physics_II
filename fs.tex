@@ -113,6 +113,12 @@
 \newcommand{\rom}[1]{\textup{\uppercase\expandafter{\romannumeral#1}}}
 \newcommand{\pdif}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdiff}[2]{\frac{\partial^2 #1}{\partial #2 ^2}}
+\newcommand{\spinup}{\ket{\uparrow}}
+\newcommand{\spindown}{\ket{\downarrow}}
+\newcommand{\spinupup}{\ket{\uparrow \uparrow}}
+\newcommand{\spinupdown}{\ket{\uparrow \downarrow}}
+\newcommand{\spindownup}{\ket{\downarrow \uparrow}}
+\newcommand{\spindowndown}{\ket{\downarrow \downarrow}}
 
 \ExplSyntaxOn
 \clist_new:N \l_feq_vector_clist
@@ -202,7 +208,7 @@ every axis x label/.style={at={(ticklabel* cs:1.05)},anchor=west}]
 } 
  
  
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.2}
 
 
 \newenvironment{mtabular}[1] {
@@ -212,8 +218,15 @@ every axis x label/.style={at={(ticklabel* cs:1.05)},anchor=west}]
 }  
 {
   \end{tabular}
-  
-  \renewcommand{\arraystretch}{1.5}
+}
+
+\newenvironment{stabular}[1] {
+\renewcommand{\arraystretch}{0.9}
+
+\begin{tabular}{#1}
+}  
+{
+\end{tabular}
 }
 
 \newenvironment{lmtabular}[1] {
@@ -224,7 +237,7 @@ every axis x label/.style={at={(ticklabel* cs:1.05)},anchor=west}]
 {
 \end{supertabular}
 
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.2}
 }
 
 \newenvironment{dtabular} {
