@@ -125,8 +125,9 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 	  	\draw [latex-latex] (1,0.3) -- (5,0.3) node [pos=0.5, above] {$L$};
   	\end{circuitikz} \\ $\qquad$
 	  \begin{circuitikz} [scale=0.6, transform shape]
-	  	\draw (0,0) to [R=$R'$] (0,2) to [sV_=$V$] (4,2) to [R=$R$] (4,0) to [short] (0,0);
+	  	\draw (0,0) to [R=$R$] (0,2) to [sV_=$V$] (4,2) to [R=$R'$] (4,0) to [short] (0,0);
 	  	\draw [dashed] (-0.8,-0.6) rectangle (2.6,2.6);
+	  	\draw (-0.8,-0.6) node [below right]{Sample at Temperature $T$};
 	  \end{circuitikz}
 	\end{tabular} &
 
@@ -238,16 +239,27 @@ $$\fmm B_{21} = B_{12} = B \qquad A_{21} = \frac{8\pi h \nu^3}{c^3}$$
 	\end{tabular}
 \end{center}
 
+
 Electrons are excited from the ground state ``0'' to the level ``3'' by pumping through incoherent radiation. 
 The electrons then fall onto a long-lived state $n_2$ (State ``2'') from level ``3''. 
 The pumping can be done either optically by shining a strong incoherent light or by passing a current. 
 It is also assumed that the lower state is quickly emptied by a fast process with lifetime $\tau_1$. 
 As a result, the population in state ``2'' is:
 $$n_2 = \frac{R}{A_{21}} \quad \text{whereas} \quad n_1 \approx 0 \quad \text{because} \quad  A_{21} < \frac{1}{\tau_1}$$
+
+\begin{comment}
 We have rherefore a population inversion between the two states. 
 The likelihood of a stimulated emission process is larger than the one of absorbtion. 
 If we enclose the system in an optical cavity, we can achieve self-sustained oscillation at the frequency $\nu$.
-b
+
+\end{comment}
+
+\subsection{Fermi Energy of a metal}
+
+$$E_F = \frac{\hslash^2}{2m_e} \left( 3 n \pi^2 \right)^{2/3} \qquad n = \frac{\rho}{m} = \frac{\rho \cdot N_A}{m_{mol}}$$
+
+Where $m_e \si{\kilogram}$ is the mass of the electron, $m \si{\kilogram}$ is the mass of an single atom of the metal, $m_{mol} \si{\kilogram \per \mole}$ is the atomic weight, $n \si{\per \meter \cubed}$ is the number of atoms per unit of volume and $\rho \si{\kilogram \per \metre \cubed}$ is the density of the metal. 
+
 \section{Wave mechanics}
 
 \begin{center}
@@ -379,9 +391,10 @@ $$i \hslash \cdot \frac{\partial \Psi}{\partial t}(\bm{x},t) = - \frac{\hslash^2
 $$\Psi = A \cdot e^{i (\bm{k} \bm{x} - \omega t)} \qquad \bm{k} = \Vector[&]{k_x,k_y,k_z}, \quad \bm{x} =\Vector[&]{x,y,z}^T$$
 $$E = \omega \hslash = \frac{\hslash^2 k^2}{2 m}, \qquad k^2 = \abs{k}^2$$
 
+The wave function and it's derivative must be continuous where the potential $V(x,t)$ is finite.
+
 \subsubsection{Phase and Group Velocity}
-The \cdef{phase velocity $v_{\varphi}$} describes how fast the phase of the wave moves forward. 
-The \cdef{group velocity $v_g$} describes how fast the energy is moving forward. 
+\cdef{phase velocity $v_{\varphi}$} (phase movement), \cdef{group velocity $v_g$} (movement of wave packet)
 $$v_{\varphi} = \frac{\omega}{k} \qquad v_g =\frac{\partial \omega}{\partial k} \qquad \text{Particle wave: } \ v_\varphi \cdot 2 = v_g$$
 
 \subsubsection{Stationary (Time independent) States}
@@ -392,8 +405,6 @@ $$\Psi_n(\bm{x},t) = \psi_n(\bm{x}) \cdot \chi_n(t) = \psi_n(\bm{x}) \cdot e^{-i
 $$-\frac{\hslash^2}{2m} \nabla^2 \psi_n(\bm{x}) + V(\bm{x}) \psi_n(\bm{x}) =\psi_n(\bm{x}) \cdot E_n$$
 $$\iiint \abs{\Psi}^2 d^3\bm{x} = \iiint \abs{\psi}^2 d^3\bm{x} = 1$$
 $$\Psi(\bm{x},t) = \sum a_n \psi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \quad \sum \abs{a_n}^2 = 1$$
-
-Requirements: The wave function must be continous, as well as it's derivative 
 
 \subsubsection{Example: 1D infinite potential well}
 
@@ -418,7 +429,7 @@ Requirements: The wave function must be continous, as well as it's derivative
 
 \begin{mtabular}{c}
 	$\fmm \psi_{2_n} = A \cdot \sin (k_n x) \quad \Psi_{2_n} = A \cdot \sin \left( k_n x \right)  \cdot e^{-i \frac{E_n}{\hslash} x}, \quad \text{\small Normalize:} \quad  A = \sqrt{\frac{2}{L}}$ \\
-	$\fmm E_n =n^2 \cdot \frac{\hslash^2 \pi^2}{2 m L} =n^2 \cdot E_0, \qquad k_n = \frac{n \pi}{L}$ \\
+	$\fmm E_n =n^2 \cdot \frac{\hslash^2 \pi^2}{2 m L} =n^2 \cdot E_0, \qquad k_n = \frac{n \pi}{L} \si{\per \meter}$ \\
 \end{mtabular}
 
 \subsubsection{Example: 1D finite potential well}
@@ -637,6 +648,8 @@ $$R = \left(\frac{A_1}{A'_1}\right)^2, \qquad T = \left(\frac{A_3}{A_1}\right)^2
 
 If $\mathbf{E > V_0}$, the transmission coefficient has a maximum. If $k_2 \ell = n \pi \, \Rightarrow \, T = 1$ (\textbf{resonance}). The minimum of $T$u is at: $k_2 \ell = \pi/2 + n\pi$.
 
+If $\delta_2 \ell \gg 1$, the transmission coefficient is proportional to: $T \propto e^{-2 \delta_2 \ell}$
+
 \end{twocolumn}
 
 \section{Wave Function Space (Hilbert Space)}
@@ -836,11 +849,9 @@ $$\Phi(2\pi) = \Phi(0) \; \rightarrow \; m \in \mathbb{Z}, \quad \abs{m} \leq \e
 $$\psi_{n \ell m}(r,\theta,\varphi) = R_{n \ell}(r) \cdot Y_\ell^m (\theta, \varphi) = R_{n\ell}(r) \cdot P_\ell^m(\cos \theta) e^{i m \varphi}$$
 
 The angular part $Y_\ell^m(\theta, \varphi)$ can be written as:
-
 $$P_\ell^m(x) = (i-x^2)^{\frac{\abs{m}}{2}} \frac{d^{\abs{m}}}{dx^{\abs{m}}} P_\ell(x) \qquad P_\ell(x) = \frac{1}{2^\ell \cdot \ell!} \frac{\partial^\ell}{dx^\ell} (x^2-1)^\ell$$
 
 The solution to $Y$ will be a \textbf{spherical harmonic}.Finally, we must apply the normalization
-
 $$\int_0^\infty \abs{R(r)}^2 r^2 dr = 1, \qquad \int_{\theta=0}^{\pi} \int_{\varphi=-\pi}^{\pi} \abs{Y_\ell^m(\theta,\varphi)}^2 \sin \theta d\varphi d\theta = 1$$
 
 These solutions are the same as \textbf{spherical harmonics}. 
@@ -850,15 +861,14 @@ They form an \textbf{orthogonal basis}, meaning that every well-behaved function
 \subsubsection{Hydrogen Atom}
 
 The radial part $R_{n\ell}$ of the hydrogen atom with potential $V(r) = \frac{-e^2}{4\pi\epsilon_0 r}$ can be written as:
-
 $$R_{n\ell}(r) = \frac{1}{r} \rho^{\ell+1} e^{-\rho} v(\rho), \quad \rho = \frac{r}{n a_0}, \quad a_0 = \frac{4\pi \epsilon_0 \hslash^2}{m e^2} \approx  5.29 \cdot 10^{-11} \si{\meter}$$
 $$\psi_{n\ell m}(r,\theta,\varphi) = R_{n\ell}(r) Y_\ell^m(\theta,\varphi) \qquad  j_{max} = (n-\ell-1) \geq 0 \qquad \abs{m} \leq \ell$$
+$$E = -\frac{E_{Ry}}{n^2} \approx -\frac{13.6}{n^2} \si{\electronvolt}$$
 
 $v(\rho)$ is a polynomial of degree $j_{max}$ with coefficients: $C_{g+1} = \frac{2(g+l+1-n)}{(g+1)(g+2l+2)} C_g$. 
 For state $n$, there are $d(n) = n^2$ different solutions (\textbf{degeneracies}). 
 The \textbf{effective radius} is $n a_0$.
 The \textbf{probability} of of finding an electron between $r$ and $r+dr$ is:
-
 $$p(r) dr = r^2 \abs{R_{n\ell}(r)}^2 dr$$
 
 \subsubsection{Quantum Numbers}
@@ -884,14 +894,14 @@ Angular momentum operators do not commute. In order to get commutable operators,
 
 $$\left[\hat L^2,\hat L_x\right] = 0, \qquad \left[\hat L^2,\hat L_y\right] = 0, \qquad \left[\hat L^2,\hat L_z\right] = 0$$
 
-$$\hat L^2 Y_\ell^m (\theta,\varphi) = h^2 \ell (\ell + 1) Y_\ell^m(\theta,\varphi), \qquad \hat L_z Y_\ell^m(\theta,\varphi) = \hslash m Y_\ell^m(\theta,\varphi)$$
+$$\hat L^2 Y_\ell^m (\theta,\varphi) = \hslash^2 \ell (\ell + 1) Y_\ell^m(\theta,\varphi), \qquad \hat L_z Y_\ell^m(\theta,\varphi) = \hslash m Y_\ell^m(\theta,\varphi)$$
 
 \subsection{Ladder Operator}
 
 If a ladder operators $\hat L_\pm = \hat L_x \pm i \hat L_y$ are used in the following way: Suppose, we have a wave function $\psi$, which is simultaneously an eigenfunction of $\hat L^2$ and $\hat L_z$. Then, $\hat L_\pm \psi$ is also an eigenfunction of $\hat L^2$ and $\hat L_z$ with the following eigenvalues:
 
-$$\hat L^2 \psi = \lambda \psi, \quad \hat L_z \psi = \mu \psi$$
-$$\hat L^2 (\hat L_\pm \psi) = \lambda (\hat L_\pm \psi), \quad \hat L_z (\hat L_\pm \psi) = (\mu \pm \hslash) (\hat L_\pm \psi)$$ 
+$$\hat L^2 \psi = \lambda \psi, \quad \hat L_z \psi = \mu \psi \qquad \hat L^2 (\hat L_\pm \psi) = \lambda (\hat L_\pm \psi), \quad \hat L_z (\hat L_\pm \psi) = (\mu \pm \hslash) (\hat L_\pm \psi)$$ 
+$$\hat L_+ Y_\ell^m = \hslash \sqrt{\ell (\ell + 1) - m (m + 1)} Y_\ell^{m+1} \qquad \hat L_- Y_\ell^m = \hslash \sqrt{\ell (\ell + 1) - m (m - 1)} Y_\ell^{m-1}$$
 
 \subsection{Spin}
 
@@ -900,6 +910,9 @@ $$\chi_+ = \Ket{\frac12,\frac12} = \ket{\uparrow}, \quad \chi_- = \Ket{\frac12,-
 
 Since we have now only two eigenstates $\spinup$ and $\spindown$, we can write:
 $$\hat S^2 = \frac{3}{4} \hslash^2 \begin{pmatrix} 1&0\\0&1 \end{pmatrix} \quad \hat S_x = \frac{\hslash}{2} \begin{pmatrix} 0&1\\1&0 \end{pmatrix} \quad \hat S_y = \frac{\hslash}{2} \begin{pmatrix} 0&-i\\i&0 \end{pmatrix} \quad \hat S_z = \frac{\hslash}{2} \begin{pmatrix} 1&0\\0&-1 \end{pmatrix}$$
+
+If we separate the spin in all three directions, we can write:
+$$\ket{\uparrow_x} = \frac{1}{\sqrt{2}} \left(\ket{\uparrow_z} + \ket{\downarrow_z} \right), \qquad \ket{\downarrow_x} = \frac{1}{\sqrt{2}} \left(\ket{\uparrow_z} - \ket{\downarrow_z} \right)$$
 
 Now, we define the ladder operators in the same way as for the angular momentum:
 $$\hat S_+ = \begin{pmatrix} 0&\hslash\\0&0 \end{pmatrix} \quad \hat S_- = \begin{pmatrix} 0&0\\\hslash&0 \end{pmatrix} \quad \hat S_+ \spinup = \hat S_- \spindown = 0, \ \hat S_+ \spindown = \hslash \spinup, \ \hat S_- \spinup = \hslash \spindown$$
@@ -922,16 +935,12 @@ We have two particles, which have normalized and orthogonal wave functions. We h
 	\item The particles are \textbf{distinguishable}: $\psi = \psi_a(x_1) \psi_b(x_2)$
 	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} - 2 \braket{x}_{\psi_a} \braket{x}_{\psi_b}$$
 	\item \textbf{Symmetric} wave function: $\psi_+ = \frac{1}{\sqrt2} (\ket{\psi_a} \ket{\psi_b} + \ket{\psi_b} \ket{\psi_a})$
-	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} - 2 \abs{\braket{\psi_a|x|\psi_b}}^2$$
+	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} - 2 \braket{x}_{\psi_a} \braket{x}_{\psi_b} - 2 \abs{\braket{\psi_a|x|\psi_b}}^2$$
 	\item \textbf{Antisymmetric} wave function: $\psi_- = \frac{1}{\sqrt2} (\ket{\psi_a} \ket{\psi_b} - \ket{\psi_b} \ket{\psi_a})$
-	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} + 2 \abs{\braket{\psi_a|x|\psi_b}}^2$$
+	$$\Braket{(x_1-x_2)^2}_\psi = \braket{x^2}_{\psi_a} + \braket{x^2}_{\psi_b} - 2 \braket{x}_{\psi_a} \braket{x}_{\psi_b}  + 2 \abs{\braket{\psi_a|x|\psi_b}}^2$$
 \end{enumerate}
 
-This means, that the particles are closer together in the antisymmetric case than in the symmetric case. But this does not account for the spin. Because of Pauli's exclusion principle, the electrons must be in a different state, therefore they have different spin. The total angular momentum can be either $\ket{0,0}$ or $\ket {1,0}$. Those are both antisymmetric wave functions. Therefore, the radial part must be symmetric, in which case, both electrons are attracted to eachother.
-
 \subsection{Many Electrons: Atomic Shells}
-
-Electrons with $n = 2$ are further away from the nucleus than electrons with $n = 1$. Therefore, those further away see a different (smaller) effective charge than those in the inner shell.
 
 To write the wave function of an electron, we use the notation indexed by: $\ket{n, \ell, m}$.
 \begin{center}
@@ -946,7 +955,49 @@ To write the wave function of an electron, we use the notation indexed by: $\ket
 	\end{stabular}
 \end{center}
 
-Here, the number of degeneracies per shell is displayed. Remember, we have $n \geq 1$, $0 \leq \ell \leq n$, $-\ell \leq m \leq \ell$, and for every different state, the electron can have either spin up or spin down. So, the number of electrons in a sub shell is the number of degeneracies. 
+Here, the number of degeneracies per shell is displayed. Remember, we have $n \geq 1$, $0 \leq \ell < n$, $-\ell \leq m \leq \ell$, and for every different state, the electron can have either spin up or spin down. So, the number of electrons in a sub shell is the number of degeneracies. 
+
+\subsection{Term Symbol}
+
+$$^{2S+1}L_j$$
+
+$S$ is the total spin quantum number, $2S+1$ is the spin multiplicity, $J$ ($m$) is the total angular momentum quantum number and $L$ is the orbital quantum number in spectroscopic notation: $L=0 \rightarrow S$, $L=1 \rightarrow P$, $L=2 \rightarrow D$...
+
+\section{Quantum Statistics and Solid States}
+
+\subsection{Chemical Potential}
+
+For the chemical potential $\mu$, the flux of particles (instead of energy) is important. 
+$$\mu = \pdif{F}{N}, \qquad F = U - TS$$
+where $F$ is the free energy, $U$ is the total energy, $T$ is the temperature, $S$ is the entropy and $N$ is the number of particles. In other words: \textbf{Chemical Potential is the energy exchanged when a particle is added or removed}.
+
+\subsection{Fermi-Dirac \& Einstein Statistics}
+
+What is the probability of a given state to be occupied? And if we have multiple particles, how many electrons are in a state?
+$$\textbf{Fermions:} \ f_F(E, \mu, T) = \frac{1}{\exp \left( \frac{E-\mu}{kT} \right) + 1}, \quad \textbf{Bosons:} \ f_B(E, \mu, T) = \frac{1}{\exp \left( \frac{E-\mu}{kT} \right) - 1}$$  
+
+As the energy $E \gg \mu$, both distributions are the same: the classical Bolzmann distribution. If the electrons are far away, we do not need to consider the interaction between single particles. 
+
+\subsection{Fermi-Dirac statistics of a free electron gas}
+
+The number of particles $N$ given an energy $E$ with temperature $T = 0$ is:
+$$N(E) = \frac{L^3}{3\pi^2} \frac{(2mE)^\frac{3}{2}}{\hslash^2} = \frac{4}{3}\pi k^3 \cdot \frac18 \cdot \left(\frac{L}{\pi}\right)^3 \cdot 2$$
+
+This equation is derived by multiplying the Volume of a sphere (in the positive $k$ sector) with radius $k$ with the volume of a single state and the number of possible spins (2). 
+
+The Density of states $D(E)$ is given by:
+$$D(E) = \pdif{N(E)}{E} \cdot \frac{1}{V} = \frac{1}{2\pi^2} \left(\frac{2m}{\hslash}\right)^{\frac{3}{2}} \sqrt{E}$$
+
+\subsection{Bloch's Theorem}
+
+In a periodic potential, the wave equation can be written as a periodic function $u_{nk}(x)$ multiplied by a complex exponential:
+$$\psi_{nk}(x) = e^{ikx} u_{nk}(x)$$
+
+We can apply this theorem the band formation to conclude the following. As soon as we have a crystal, the electrons can be in a continuous band of energies:
+$$E = E_0 - 2A \cos(ka) = E(k)$$
+
+where $A$ is the inter-atomic coupling. We can see that the band width is directly proportional to $A$. 
+
 
 \section{Useful formulas}
 
