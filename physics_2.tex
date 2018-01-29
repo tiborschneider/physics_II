@@ -1,6 +1,6 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
-\documentclass{article}
+\documentclass[a4paper, 9pt]{extarticle}
 
 \input{fs.tex}
 %Title of Document
@@ -9,37 +9,19 @@
 \begin{document}
 \begin{twocolumn} 
 
-
-
 \section{The Photon}  
 
-\begin{donotbrake}
-\begin{tabular}{cc}
-	\begin{dtabular}
-		
-		$c \si{\metre \per \second}$ & speed of light \\
-		$h \si{\metre \squared \kilogram \per \second}$ & planc's constant \\
-		$e \si{\coulomb}$ & electorn charge \\
-		$m_e \si{\kilogram}$ & electron mass \\
-		$k_B \si{\metre \squared \kilogram \per \second \squared \per \kelvin}$ & bolzmann constant \\
-		$\epsilon_0 \si{\farad \per \metre}$ & vacuum permittivity \\
-		
-	\end{dtabular}
+\begin{mtabular}{cc}
+	$c = 2.998 \cdot 10^8 \si{\metre \per \second} \ \mathbf{C}$ &
+	$\epsilon_0 = 8.854 \cdot 10^{-12} \si{\farad \per \meter}$ \\
+	$h = 6.626 \cdot 10^{-34} \si{\metre \squared \kilogram \per \second} \ \mathbf{A}$ &
+	$\hslash = \frac{h}{2\pi} = 1.055 \cdot 10^{-34}\si{\metre \squared \kilogram \per \second} \ \mathbf{B}$ \\
+	$e = 1.602 \cdot 10^{-19} \si{\coulomb} \ \mathbf{E}$ &
+	$m_e = 9.109 \cdot 10^{-31} \si{\kilogram}$ \\
+	$k_B = 1.381 \cdot 10^{-23} \si{\metre \squared \kilogram \per \second \squared \per \kelvin} \ \mathbf{D}$ &
+	$1 \si{\electronvolt} = 1.602 \cdot 10^{-19} \si{\kilogram \metre \squared \per \second \squared} \si{\joule}$ \\
+\end{mtabular} 
 
-	\begin{mtabular}{c}
-		$c = 2.998 \cdot 10^8 \si{\metre \per \second}$ \\
-		$h = 6.626 \cdot 10^{-34} \si{\metre \squared \kilogram \per \second}$ \\
-		$\hslash = \frac{h}{2\pi}$ \\
-		$e = 1.602 \cdot 10^{-19} \si{\coulomb}$ \\
-		$m_e = 9.109 \cdot 10^{-31} \si{\kilogram}$ \\
-		$k_B = 1.381 \cdot 10^{-23} \si{\metre \squared \kilogram \per \second \squared \per \kelvin}$ \\
-		$\epsilon_0 = 8.854 \cdot 10^{-12} \si{\farad \per \meter}$ \\
-		$1 \si{\electronvolt} = 1.602 \cdot 10^{-19} \si{\kilogram \metre \squared \per \second \squared} \si{\joule}$ \\
-	\end{mtabular} 
-\end{tabular}
-\end{donotbrake}
-
-\begin{donotbrake}
 \subsection{Photon \& Electron}
 
 \begin{tabular}{cc}
@@ -51,67 +33,58 @@
 		%$\mu \si{\kilogram}$ & Equivalent Mass \\
 	\end{dtabular} &
 	\begin{mtabular}{c}
-		$\fmm \lambda = \frac{c}{\nu} \quad \fmm \nu = \frac{c}{\lambda} \quad \omega = 2 \pi \nu$ \\
-		$\fmm k = \frac{2 \pi \nu}{c}$ \\
+		$\fmm \lambda = \frac{c}{\nu} \quad \fmm \nu = \frac{c}{\lambda} \quad \omega = 2 \pi \nu \quad k = \frac{2 \pi \nu}{c}$ \\
 		$E = h \cdot \nu = \hslash \cdot \omega$ \\
 		$\fmm \abs{\vec{F_c}} = \frac{Q_1 \cdot Q_2}{4 \pi \epsilon_0 r^2}$ \\
 		%$\mu = \frac{m_e m_p}{m_e+m_p}$\\
 	\end{mtabular}
 \end{tabular}
 
-\end{donotbrake}
-
-
-\begin{donotbrake}
 \subsection{Photoelectric effect}
 
 \begin{tabular}{cc}
 	\begin{dtabular}
-		$V \si{\volt}$ & Voltage \\
 		$\phi_0 \si{\electronvolt} $ & Work function \\
 		$I \si{\ampere}$ & Photo-current \\
 		$n \si{\metre^{-3}}$ & Volume density of electrons \\
+		$N \si{\per \second}$ & Number of photons per second \\
 		$A \si{\metre \squared}$ & Area \\
 		$v \si{\metre \per \second}$ & velocity of electrons \\	
 	\end{dtabular} &
-	\begin{mtabular}{c}
-		$\fmm h \nu - \phi_0 = \frac{1}{2} m v^2 = eV$ \\
+	\begin{mtabular}{l}
+		$\fmm h \nu - \phi_0 = \frac{1}{2} m_e v^2 = eV$ \\
 		$\fmm V(\nu) =  \frac{h}{e} \nu - \frac{\phi_0}{e}$ \\
-		$\fmm I = n A v e$ \\
+		$\fmm I = n A v e, \quad n = \frac{N dt}{A v dt} \ \rightarrow \ I = N \cdot e$ \\
 	\end{mtabular}
 \end{tabular}
-\end{donotbrake}
 
-
-\begin{donotbrake}
 \subsection{Blackbody Radiation}
 
 \begin{ddtabular}
 	$L \si{\metre}$ & length of blackbody cube &
-	$k_i$ & wave constants \\
-	$E_x$ & Electric field in x-direction &
-	$<E>$ & Average Energy \\
+	$E_x$ & Electric field in x-direction \\
 	$N$ & Number of states &
 	$D$ & Density of states \\
-	$u$ & Blackbody radiation &
-	$I$ & Power radiated \\
+	$u \si{\meter \kilogram \squared \per \second \squared}$ & Blackbody energy density &
+	$I \si{\watt \per \meter \squared}$ & Power density \\
 \end{ddtabular}
 
 \begin{tabular}{c}
-	$E_x(x,y,z) = E_{0x} \cos(k_x x) sin(k_y y) sin(k_z z)$ \\
+	$E_x(x,y,z) = E_{0x} \cos(k_x x) \sin(k_y y) \sin(k_z z)$ \\
 	$\fmm k_x = n \frac{\pi}{L} \quad \fmm k_y = m \frac{\pi}{L} \quad \fmm k_z = l \frac{\pi}{L} \qquad k = \sqrt{k_x^2 + k_y^2 + k_z^2}$ \\
-	$\fmm N(k) = \frac{1}{3\pi^2} k^3 L^3 \qquad D(k) = \frac{k^2}{\pi^2}$ \\
-	$\fmm u(\omega) =\frac{\omega^2}{\pi^2 c^3} \cdot \frac{\hslash \omega}{\exp\left(\frac{-\hslash \omega}{k T}\right)-1} d\omega \qquad u(\nu) = \frac{8\pi h \nu^3}{c^3 \left( \exp \left(\frac{h \nu}{k T}\right) - 1\right)} d\nu$ \\
-	$\fmm I(\omega) = c \cdot u(\omega)$
+	$\fmm N(k) = \text{Num Polarizations} \cdot \frac{1}{2^{\text{Dim}}} \cdot \frac{\text{Volume or Area of sphere or circle with radius }k}{\text{Volume of the elementary cell}}$\\
+	$\text{In 3 Dimensions:} \quad \fmm N(k) = 2 \cdot \frac{1}{8} \cdot \frac{\frac{4}{3} \pi k^3}{\left(\frac{\pi}{L}\right)^3} = \frac{1}{3\pi^2} k^3 L^3 \qquad D(k) = \left(\frac{dN(k)}{dk}\right) \frac{1}{L^3} =  \frac{k^2}{\pi^2}$ \\
+	$\fmm u(\omega) d\omega =\frac{\omega^2}{\pi^2 c^3} \cdot \frac{\hslash \omega}{\exp\left(\frac{-\hslash \omega}{k T}\right)-1} d\omega \qquad u(\nu) d\nu = \frac{8\pi h \nu^3}{c^3 \left( \exp \left(\frac{h \nu}{k T}\right) - 1\right)} d\nu$ \\
+	$\fmm I(\omega) d\omega = c \cdot u(\omega) d\omega$
 \end{tabular}
 
 \textbf{Equipartition-Theorem}: Each degree of Freedom has an energy of $kT$
-\end{donotbrake}
 
-\begin{donotbrake}
 \subsection{Johnson-Noise}
 
-This is the noise created in a one-dimensional circuit (like a coax-cable).
+For Johnson-Noise, we use the model of Blackbody radiation in the 1 dimensional case. We can express $N(k)= \frac{k}{\frac{\pi}{L}}$ and $D(k) dk = \frac{1}{\pi} dk$ or $D(\omega) = \frac{1}{\pi c'} d\omega$, where $c'$ is the velocity along the transmission line. We have one allowed polarization. The energy density in the line per unit length is: $u(\nu) d\nu = kT \frac{2}{c'} d\nu$ and the power radiated at one end of the line is then: $P = \frac{1}{2} c' u(\nu) d\nu = kT d\nu$.
+
+This is the noise created in a one-dimensional circuit (like a coax-cable). If the impedance of the transmission line (TL) is equal to the resistors at the ends, the transmission line can be ignored ($P_R = P_{in}$). \cdef{$\langle V^2 \rangle$: Noise Voltage} and \cdef{$\delta \nu$:bandwidth}
 
 \begin{tabular}{cc}
 	
@@ -131,20 +104,17 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 	  \end{circuitikz}
 	\end{tabular} &
 
-	\begin{tabular}{c}
-		\begin{dtabular}
-			$\langle V^2\rangle$ & Noise Voltage \\
-			$\Delta \nu$ & Bandwidth \\
-		\end{dtabular} \\
-		\begin{tabular}{c}
+	\begin{tabular}{l}
+		\begin{mtabular}{l}
+			$D(k) = \frac{1}{L}  \frac{dN(k)}{dk} = \frac{1}{\pi} \quad \text{(number of modes in TL)}$ \\
 			$E = E_0 \cdot \sin(k_x \cdot x)$ \\
-			$\langle V^2 \rangle = 4 R \cdot k_BT \cdot \Delta \nu$
-		\end{tabular}
+			$\langle V^2 \rangle = 4 R \cdot k_BT \cdot \Delta \nu$ \\
+			$\fmm \text{if} \ \frac{\hslash \omega}{kT} > 1: \ \langle V^2 \rangle = 3 R \cdot k_b T \cdot \delta \nu \cdot \frac{h \nu}{\exp \left(\frac{h \nu}{kT}\right) - 1}$ \\
+			$\fmm \text{if} \ Z \neq R \longrightarrow P_R = \frac{4 R Z}{(R+Z)^2} P_{in}$
+		\end{mtabular}
 	\end{tabular}
 \end{tabular}
-\end{donotbrake}
 
-\begin{donotbrake}
 \subsection{Momentum of a photon}
 
 \begin{tabular}{cc}
@@ -157,33 +127,32 @@ This is the noise created in a one-dimensional circuit (like a coax-cable).
 		\end{tikzpicture}
 	\end{tabular} &
 	\begin{tabular}{c}
+		This process must conserve both total momentum and energy.\\
 		\begin{dtabular}
 			$p  \si{\kilo \gram \metre \per \second}$ &momentum \\
 		\end{dtabular} \\
 		\begin{tabular}{c}
-			$\fmm p_{absorbing} =\frac{h \nu}{c}=m\cdot v$ \\
-			$\fmm p_{reflecting} =2 \cdot \frac{h \nu}{c}$\\
+			$\fmm p_{\text{absorbing}} =\frac{h \nu}{c}=m\cdot v \qquad p_{\text{reflecting}} =2 \cdot \frac{h \nu}{c}$\\
 			$p=\sqrt{2m_ee\Delta V}$
 		\end{tabular}
 	\end{tabular}
 \end{tabular}
-\end{donotbrake}
 
 \begin{donotbrake}
 \subsection{Absorption, spontaneous and stimulated emission}
 \begin{center}
 \begin{tabular}{ccc}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[yscale=0.8]
 		\draw[thick] (0,0) -- (1,0) (0,2) -- (1,2);
 		\draw[*->] (0.5,0) -- (0.5,2) node[pos=0.5, right]{$B_{12}$};
 		\draw[->,photon] (-0.5,1) -- (0.5,1);
 	\end{tikzpicture} &
-	\begin{tikzpicture}
+	\begin{tikzpicture}[yscale=0.8]
 	\draw[thick] (0,0) -- (1,0) (0,2) -- (1,2);
 	\draw[<-*] (0.5,0) -- (0.5,2) node[pos=0.5, left]{$A_{21}$};
 	\draw[->,photon] (0.5,1) -- (1.5,1);
 	\end{tikzpicture} &
-	\begin{tikzpicture}
+	\begin{tikzpicture}[yscale=0.8]
 	\draw[thick] (0,0) -- (1,0) (0,2) -- (1,2);
 	\draw[<-*] (0.5,0) -- (0.5,2) node[pos=0.8, right]{$B_{21}$};
 	\draw[->,photon] (-0.5,1) -- (0.5,1);
@@ -266,8 +235,8 @@ Where $m_e \si{\kilogram}$ is the mass of the electron, $m \si{\kilogram}$ is th
 	\begin{tabular}{ccccc}
 		& frequency & wavelength & momentum & energy \\
 		\midrule
-		Particle & & $\lambda_b = \frac{h}{p}$ & $p = m v$ & $E = \frac{1}{2} m v^2$ \\
-		Wave & $\omega$ & $\lambda = \frac{2\pi c}{\omega}$ & $p = \frac{\hslash \omega}{c}$ & $E = \hslash \omega$ \\
+		Particle & $\nu_b = \frac{E}{h}$ & $\lambda_b = \frac{h}{p} = \frac{h}{mv}$ & $p = m v$ & $E = \frac{1}{2} m v^2$ \\
+		Wave & $\omega, \ \nu$ & $\lambda = \frac{2\pi c}{\omega} = \frac{c}{\nu}$ & $p =\hslash k = \frac{\hslash \omega}{c} = \frac{h \nu}{c}$ & $E = h \nu = \hslash \omega$ \\
 	\end{tabular}
 \end{center}
 
@@ -287,7 +256,8 @@ Where $m_e \si{\kilogram}$ is the mass of the electron, $m \si{\kilogram}$ is th
 		\end{tikzpicture}
 	\end{tabular} &
 	\begin{mtabular}{c}
-		$\fmm p_1 =\frac{h \nu_1}{c} \qquad p' = \frac{h \nu_2}{c}$ \\
+		$\fmm \bm{p}_1 = \bm{p}_2 + \bm{p}_e$ \\
+		$\fmm p_1 =\frac{h \nu_1}{c} \qquad p_2 = \frac{h \nu_2}{c}$ \\
 		$\fmm \nu_2 = \nu_1 - \frac{P_e^2}{2 m_e h}$ \\
 		$\fmm \lambda_2 - \lambda_1 = \frac{h}{m_e c} (1 - \cos \theta)$;
 	\end{mtabular}
@@ -436,7 +406,7 @@ $$\Psi(\bm{x},t) = \sum a_n \psi_n(\bm{x}) \cdot e^{-i \frac{E_n}{\hslash}t} \qu
 
 \begin{tabular}{cc}
 	\begin{tabular}{l}
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=1.2]
 			\draw [->] (0,1.5) -- (4,1.5) node[right] {$x$};
 			\draw [->] (2,0) -- (2,2) node[above] {$V(x)$};
 			\draw [thick, cRed] (0,1.5) -- (1,1.5) -- (1,0.25) -- (3,0.25) -- (3,1.5) -- (3.9,1.5);
@@ -672,7 +642,7 @@ $$\infint \psi_1^\ast(x) \cdot \psi_2(x) \cdot dx = \infint \varphi^\ast_1(p) \c
 \section{Observable Measurements, Time-dependence}
 
 Doing a measurement in quantum mechanics (observable) can be interpreted as applying an operator $\hat{A}$ on the wave function $\psi(\bm{x},t)$. For example, tu o compute the expected position $\langle \bm{x} \rangle_\psi$, we apply the operator $\hat{\bm{x}} = \bm{x}$ to average the wave function:
-$$\langle \bm{x} \rangle_\Psi = \iiint \Psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \Psi(\bm{x},t) d^3 \bm{x} = \iiint \bm{x} \cdot \abs{\Psi(\bm{x},t)}^2 d^3\bm{x}$$
+$$\langle \bm{x} \rangle_\Psi = \iiint \Psi^\ast(\bm{x},t) \cdot \bm{x} \cdot \Psi(\bm{x},t) d^3 \bm{x} = \iiint \bm{x} \cdot \abs{\Psi(\bm{x},t)}^2 d^3\bm{x} \quad \braket{\psi_m|\psi_n} = \delta_{mn} \quad \ket{\psi_n} \bra{\psi_n} = 1$$
 
 \begin{center}
 	\begin{tabular}{lll}
@@ -833,7 +803,6 @@ In general, degeneracies arise from symmetries (obvious or hidden).
 	\end{tabular}
 \end{center}
 
-\begin{comment}
 To use the Schrödinger equation, we must define the Laplacian operator $\nabla^2$:
 $$\nabla^2 = \frac{1}{r^2} \pdif{}{r} \left(r^2 \pdif{}{r}\right) + \frac{1}{r^2 \sin\theta} \pdif{}{\theta} \left(\sin\theta \pdif{}{\theta}\right) + \frac{1}{r^2 \sin^2\theta} \pdiff{}{\varphi}$$
 
@@ -844,7 +813,6 @@ $$\psi(r,\theta, \varphi) = R(r) \cdot Y(\theta, \varphi)$$
 
 The angular equation can be rewritten, in order to separate $Y(\theta, \varphi)$ into $\Theta(\theta)\Phi(\varphi)$. With this separation, we get for the angular part:
 $$\Phi(2\pi) = \Phi(0) \; \rightarrow \; m \in \mathbb{Z}, \quad \abs{m} \leq \ell$$
-\end{comment}
 
 $$\psi_{n \ell m}(r,\theta,\varphi) = R_{n \ell}(r) \cdot Y_\ell^m (\theta, \varphi) = R_{n\ell}(r) \cdot P_\ell^m(\cos \theta) e^{i m \varphi}$$
 
@@ -910,8 +878,6 @@ $$\chi_+ = \Ket{\frac12,\frac12} = \ket{\uparrow}, \quad \chi_- = \Ket{\frac12,-
 
 Since we have now only two eigenstates $\spinup$ and $\spindown$, we can write:
 $$\hat S^2 = \frac{3}{4} \hslash^2 \begin{pmatrix} 1&0\\0&1 \end{pmatrix} \quad \hat S_x = \frac{\hslash}{2} \begin{pmatrix} 0&1\\1&0 \end{pmatrix} \quad \hat S_y = \frac{\hslash}{2} \begin{pmatrix} 0&-i\\i&0 \end{pmatrix} \quad \hat S_z = \frac{\hslash}{2} \begin{pmatrix} 1&0\\0&-1 \end{pmatrix}$$
-
-If we separate the spin in all three directions, we can write:
 $$\ket{\uparrow_x} = \frac{1}{\sqrt{2}} \left(\ket{\uparrow_z} + \ket{\downarrow_z} \right), \qquad \ket{\downarrow_x} = \frac{1}{\sqrt{2}} \left(\ket{\uparrow_z} - \ket{\downarrow_z} \right)$$
 
 Now, we define the ladder operators in the same way as for the angular momentum:
@@ -919,12 +885,13 @@ $$\hat S_+ = \begin{pmatrix} 0&\hslash\\0&0 \end{pmatrix} \quad \hat S_- = \begi
 
 We can write states states in dirac notation as: $\ket{\ell,m}$. For spins, we get:
 $$\ket{1,1} = \spinupup, \ \ket{1,-1} = \spindowndown, \ \ket{1,0} = \frac{1}{\sqrt2}(\spinupdown + \spindownup), \ \ket{0,0} = \frac{1}{\sqrt2} (\spinupdown - \spindownup) $$
+$$\text{Clebsch Gordan:} \ \Ket{s,\ m} = \sum_{m_1 + m_2 = m} C_{m_1 m_2 m}^{s_1 s_2 s} \Ket{s_1, \ m_1} \Ket{s_2, \ m_2}$$
 
 \subsection{Identical Particles}
 When we have two particles with wave function $\varphi_a(\vec x_1)$ and $\varphi_b(\vec x_2)$, we can combine them in two different ways:
 \begin{itemize}
-	\item \textbf{Fermion}: $\psi_- = \frac{1}{\sqrt2} \left( \varphi_a (\vec x_1) \varphi_b(\vec x_2) - \varphi_b(\vec x_1) \varphi_a (\vec x_2) \right)$: symmetric (electron)
-	\item \textbf{Boson}: $\psi_+ = \frac{1}{\sqrt2} \left( \varphi_a (\vec x_1) \varphi_b(\vec x_2) + \varphi_b(\vec x_1) \varphi_a (\vec x_2) \right)$: antisymmetric (photon)
+	\item \textbf{Boson}: $\psi_- = \frac{1}{\sqrt2} \left( \varphi_a (\vec x_1) \varphi_b(\vec x_2) - \varphi_b(\vec x_1) \varphi_a (\vec x_2) \right)$: symmetric (electron)
+	\item \textbf{Fermion}: $\psi_+ = \frac{1}{\sqrt2} \left( \varphi_a (\vec x_1) \varphi_b(\vec x_2) + \varphi_b(\vec x_1) \varphi_a (\vec x_2) \right)$: antisymmetric (photon)
 \end{itemize}
 Pauli exclusion principle: \textbf{Two fermions cannot occupy the same identical state}
 
@@ -960,8 +927,7 @@ Here, the number of degeneracies per shell is displayed. Remember, we have $n \g
 \subsection{Term Symbol}
 
 $$^{2S+1}L_j$$
-
-$S$ is the total spin quantum number, $2S+1$ is the spin multiplicity, $J$ ($m$) is the total angular momentum quantum number and $L$ is the orbital quantum number in spectroscopic notation: $L=0 \rightarrow S$, $L=1 \rightarrow P$, $L=2 \rightarrow D$...
+$S$ is the total spin quantum number. $2S+1$ is the number of possible states of $J$ (total angular momentum quantum number) for a given $L$ and $S \leq L$. $J_{max} = L + S$, $J_{min} = \abs{L-S}$. $L$ is the orbital quantum number in spectroscopic notation: $L=0 \rightarrow S$, $L=1 \rightarrow P$, $L=2 \rightarrow D$, $L=3 \rightarrow F$...
 
 \section{Quantum Statistics and Solid States}
 
@@ -988,6 +954,25 @@ This equation is derived by multiplying the Volume of a sphere (in the positive 
 The Density of states $D(E)$ is given by:
 $$D(E) = \pdif{N(E)}{E} \cdot \frac{1}{V} = \frac{1}{2\pi^2} \left(\frac{2m}{\hslash}\right)^{\frac{3}{2}} \sqrt{E}$$
 
+\subsection{Semiconductors and Doping}
+
+$n_c$ is the electron concentration in the conduction band, and $n_i$ is the intrinsic carrier concentration (depending on the temperature). 
+
+$$n_c \si{\per \meter \cubed} = n_i \cdot f_{F/B}(E_F, E_i, T) \approx n_i \exp \left(\frac{E_F-E_i}{k_B T}\right) \ \text{if} \ \frac{E_F-E_i}{k_B T} \gg 1$$ 
+
+
+\begin{center}
+	\begin{tikzpicture}[scale=0.8, transform shape]
+		\draw[thick] (0,0) -- (4,0) node[right] {$E_V$: Valence band};
+		\draw[thick] (0,2) -- (4,2) node[right] {$E_C$: Conduction band};
+		\draw[dashed] (0,1) -- (4,1) node[right] {$E_i$: Intrinsic Fermi level};
+		\draw[dashed] (0,0.4) -- (4,0.4) node[right] {$E_F$ for p-type};
+		\draw[dashed] (0,1.6) -- (4,1.6) node[right] {$E_F$ for n-type};
+		\draw[<->] (0.5,0) -- (0.5,2) node[pos=0.5, fill=white, xshift=-0.8cm] {Band Gap $E_g$};
+		\draw[<->] (1.5,1) -- (1.5,2) node[pos=0.5, right, fill=white] {$\frac{E_g}{2}$};
+	\end{tikzpicture}
+\end{center}
+
 \subsection{Bloch's Theorem}
 
 In a periodic potential, the wave equation can be written as a periodic function $u_{nk}(x)$ multiplied by a complex exponential:
@@ -996,7 +981,23 @@ $$\psi_{nk}(x) = e^{ikx} u_{nk}(x)$$
 We can apply this theorem the band formation to conclude the following. As soon as we have a crystal, the electrons can be in a continuous band of energies:
 $$E = E_0 - 2A \cos(ka) = E(k)$$
 
-where $A$ is the inter-atomic coupling. We can see that the band width is directly proportional to $A$. 
+where $A$ is the inter-atomic coupling. We can see that the band width is directly proportional to $A$.
+
+\section{Classical Mechanics}
+
+\begin{mtabular}{rrcll}
+	\textbf{Quantity} & \textbf{Symbol} & & \textbf{Definition} & \textbf{unit} \\ \toprule
+	Momentum & $\bm{p}$ & $=$ & $\fmm m \bm{v}$ & $\si{\kilogram \meter \per \second}$ \\
+	Force & $\bm F$ & $=$ & $\fmm \frac{d\bm p}{dt} = m \bm a$ & $\si{\newton} = \si{\kilogram \meter \per \second \squared}$ \\ 
+	Angular momentum & $ \bm L $ & $=$ & $\fmm \bm r \times \bm p $ & $\si{\kg \meter \squared \per \second}$ \\
+	Impulse & $ \Delta \bm p $ & $=$ & $\fmm \int \bm F dt $ & $\si{\kilogram \meter \per \second}$ \\ 
+	Mechanical Work (Energy) & $ W $ & $=$ & $\fmm \int_s \bm F d\bm r = \frac{1}{2} m v^2$ & $\si{\joule} = \si{\newton \meter} = \si{\kilogram \meter \squared \per \second \squared}$ \\
+	Mechanical Power & $ P $ & $=$ & $\fmm \frac{dE}{dt} $ & $\si{\watt} = \si{\joule \per \second} = \si{\kilogram \meter \squared \per \second \cubed}$ \\
+	Velocity & $ \bm v $ & $=$ & $\fmm \frac{d\bm r}{dt} $ & $\si{\metre \per \second}$ \\
+	Acceleration & $ \bm a $ & $=$ & $\fmm \frac{d \bm v}{d t} = \frac{d^2 \bm r}{dt^2} $ & $\si{\meter \per \second \squared}$ \\
+	% & $  $ & $=$ & $\fmm  $ & $\si{}$ \\ 
+	 
+\end{mtabular}
 
 
 \section{Useful formulas}
@@ -1004,6 +1005,7 @@ where $A$ is the inter-atomic coupling. We can see that the band width is direct
 $$\infint e^{-a x^2} dx = \sqrt{\frac{\pi}{a}} \qquad \int_0^\infty x e^{-a x^2} dc = \frac{1}{2a} \qquad \infint x^2 e^{-a x^2} = \frac{\sqrt{\pi}}{2a^{3/2}}$$
 $$\int x^n e^{cx} = e^{cx} \sum_{i=0}^{n} (-1)^{n-i} \frac{n!}{i! c^{n-i+1}} x^i \qquad \int_0^\infty x^n e^{-cx} = \frac{n!}{c^{n+1}}$$
 $$\text{Gaussian:} \quad G = A \cdot e^{\frac{-x^2}{2\sigma^2}}$$
+
 
 \subsection{Trigonometry}
 {\footnotesize
@@ -1028,6 +1030,37 @@ $$\text{Gaussian:} \quad G = A \cdot e^{\frac{-x^2}{2\sigma^2}}$$
 	$\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} $&$=$&$ \frac{c}{\sin \gamma} = 2r = \frac{u}{\pi}$ \\
 \end{tabular}
 }
+
+\subsection{Differentiation}
+
+\begin{mtabular}{rl}
+	Product rule & $\fmm (f g)' = f' g + f g'$ \\
+	Quotient rule & $\fmm \left(\frac{f}{g}\right)' = \frac{f' g - f g'}{g^2}$ \\
+	Chain rule & $\fmm \frac{d}{dx} \left(f\left(g(x)\right)\right) = f'\left(g(x)\right) g'(x)$ \\
+	Power rule & $\fmm \frac{d}{dx} \left(x^n \right) = n x^{n-1}$ \\
+	Inverse power rule& $\fmm \frac{d}{dx} \left(\frac{1}{x^n}\right) = \frac{-n}{x^{n+1}}$ \\
+	Exponential rule& $\fmm \frac{d}{dx} \left(e^{g(x)}\right) = g'(x) e^{g(x)}$ \\
+	Logarithm rule& $\fmm \frac{d}{dx} \left(\ln g(x)\right) = \frac{g'(x)}{g(x)}$ \\
+\end{mtabular}
+
+\subsection{Integration}
+
+\begin{mtabular}{rl}
+	Partial integration & $\fmm \int_a^b u(x) v'(x) dx = \left. u(x) v(x) \right|_a^b - \int_a^b u'(x) v(x) dx$\\
+	Power rule & $\fmm \int x^n dx = \frac{1}{n+1} \cdot x^{n+1} + c, \quad n \neq -1$ \\
+	Inverse power rule & $\fmm \int \frac{1}{x^n} dx = \frac{1}{-n+1} \cdot \frac{1}{x^{n-1}} + c, \quad n \neq 1$ \\
+	$x^{-1}$ rule & $\fmm \int \frac{1}{x} dx = \ln \abs{x} + c, \qquad \int \frac{1}{ax + b} dx = \frac{1}{a} \ln \abs{ax + b} + c$ \\
+	Exponential rule & $\fmm \int e^x dx = e^x + c \qquad \int a^x dx = \frac{a^x}{\ln x} + c$ \\
+	Logarithm rule & $\fmm \int \ln x dx = x \left(\ln x -1\right) + c$
+\end{mtabular}
+
+\section{Ground State Electron Configuration}
+
+This table shows the ground state electron configuration for the four rows of the periodic table:
+
+\begin{center}
+	\includegraphics[height=15cm]{groundStateElectronConfigurations}
+\end{center}
 
 \begin{comment}
 \begin{center}

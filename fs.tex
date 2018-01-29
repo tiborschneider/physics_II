@@ -1,6 +1,7 @@
 %definitions for Formelsammlung
 
-\usepackage[left=1.5cm,right=1.5cm,top=2.5cm,bottom=2cm,landscape]{geometry} 
+%\usepackage[left=1.5cm,right=1.5cm,top=2.5cm,bottom=2cm,landscape]{geometry} 
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,landscape]{geometry}
 \usepackage{multicol}
 \usepackage[ngerman]{babel}
 \usepackage{tabularx}
@@ -43,6 +44,7 @@
 \usepackage{braket}
 \usepackage{relsize}
 \usepackage{comment}
+\usepackage{bm}
 
 \DeclareMathOperator\arctanh{arctanh}
 \DeclareMathOperator\arsinh{arsinh} 
@@ -354,10 +356,10 @@ every axis x label/.style={at={(ticklabel* cs:1.05)},anchor=west}]
 \newcolumntype{M}{>{$}c<{$}} % math-mode version of "c" column type
 
 %header & footer
-\pagestyle{fancy}
-\lhead{Tibor Schneider}
-\rhead{Seite \thepage}
-\cfoot{\today} 
+%\pagestyle{fancy}
+%\lhead{Tibor Schneider}
+%\rhead{Seite \thepage}
+%\cfoot{\today} 
 
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
